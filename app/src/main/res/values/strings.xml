@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BHHS lux</string>
+    <string name="georgia_properties">Georgia Properties</string>
+    <string name="button_for_go_back_description">Button for go back</string>
+    <string name="icon_of_the_app">Icon of the app</string>
+    <string name="open_map">Open Map</string>
 </resources>
