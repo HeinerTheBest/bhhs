@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/appBackGround"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgCloseButton"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvSubSubTitle"
+        app:layout_constraintEnd_toStartOf="@id/tvTitle"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        app:srcCompat="@drawable/close" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/TextTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgCloseButton"
+        app:layout_constraintEnd_toStartOf="@id/imgLogin"
+        app:layout_constraintBottom_toBottomOf="@id/tvSubTitle"
+        android:text="@string/berkshire_hathaway"
+        />
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        style="@style/Text"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:text="@string/homeservices"/>
+
+    <TextView
+        android:id="@+id/tvSubSubTitle"
+        style="@style/TextSubTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:text="@string/georgia_properties"
+        />
+
+    <ImageView
+        android:id="@+id/imgLogin"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvSubSubTitle"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/user" />
+
+    <EditText
+        android:id="@+id/etSearchHouses"
+        style="@style/Text"
+        app:layout_constraintTop_toBottomOf="@id/tvSubSubTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSearch"
+        android:background="@drawable/background_et_search"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="0.8"
+        android:hint="@string/hint_search"
+        />
+
+    <ImageView
+        android:id="@+id/btnSearch"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="0.1"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/etSearchHouses"
+        app:layout_constraintTop_toBottomOf="@id/tvSubSubTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnMicrophone"
+        app:srcCompat="@drawable/search" />
+
+    <ImageView
+        android:id="@+id/btnMicrophone"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="0.1"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btnSearch"
+        app:layout_constraintTop_toBottomOf="@id/tvSubSubTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/microphone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">BHHS lux</string>
-    <string name="georgia_properties">Georgia Properties</string>
     <string name="button_for_go_back_description">Button for go back</string>
     <string name="icon_of_the_app">Icon of the app</string>
     <string name="open_map">Open Map</string>
@@ -11,13 +10,25 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
     <string name="berkshire_hathaway">BERKSHIRE HATHAWAY</string>
     <string name="homeservices">HomeServices</string>
+    <string name="georgia_properties">Georgia Properties</string>
+    <string name="hint_search">Zip,City &amp; State, or Address</string>
+
+    <string name="menu_nearby_house_for_sale">Nearby For Sale</string>
+    <string name="menu_new_To_Market">New To Market</string>
+    <string name="menu_price_change">Price Change</string>
+    <string name="menu_open_house">Open Houses</string>
+    <string name="menu_nearby_house_for_rent">Nearby For Rent</string>
+    <string name="menu_nearby_recently_sold">Nearby Recently Sold</string>
+    <string name="menu_advanced_search">Advanced Search</string>
+    <string name="menu_find_agent_office">Find Agent/Office</string>
+    <string name="menu_saved_properties">Saved Properties</string>
+    <string name="menu_saved_searches">Saved Searches</string>
+    <string name="menu_share_app">Share App</string>
+    <string name="menu_app_help">App Help</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_accessibility">Accessibility</string>
+
+
 </resources>

@@ -144,9 +144,13 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun onClick(view : View)
     {
-        drawer_layout.openDrawer(GravityCompat.START)
+        when (view.id)
+        {
+            R.id.imgBurgerButton ->  drawer_layout.openDrawer(GravityCompat.START)
 
-       // drawer_layout.closeDrawer(GravityCompat.END)
+            R.id.imgCloseButton  ->  drawer_layout.closeDrawer(Gravity.LEFT)
+
+        }
     }
 
 
@@ -169,22 +173,46 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_home -> {
+            R.id.nav_nearby_house_for_sale -> {
                 // Handle the camera action
             }
-            R.id.nav_gallery -> {
+            R.id.nav_new_to_market -> {
 
             }
-            R.id.nav_slideshow -> {
+            R.id.nav_price_changes -> {
 
             }
-            R.id.nav_tools -> {
+            R.id.nav_open_houses -> {
+
+            }
+            R.id.nav_nearby_for_rent -> {
+
+            }
+            R.id.nav_sold -> {
+
+            }
+            R.id.nav_advanced_search -> {
+
+            }
+            R.id.nav_find_agent_office -> {
+
+            }
+            R.id.nav_saved_properties -> {
+
+            }
+            R.id.nav_saved_searches -> {
 
             }
             R.id.nav_share -> {
 
             }
-            R.id.nav_send -> {
+            R.id.nav_app_help -> {
+
+            }
+            R.id.nav_login -> {
+
+            }
+            R.id.nav_accessibility -> {
 
             }
         }

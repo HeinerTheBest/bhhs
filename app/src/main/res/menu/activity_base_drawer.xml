@@ -6,34 +6,64 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_nearby_house_for_sale"
+            android:icon="@drawable/nearby_for_sale"
+            android:title="@string/menu_nearby_house_for_sale" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_new_to_market"
+            android:icon="@drawable/new_to_market"
+            android:title="@string/menu_new_To_Market" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_price_changes"
+            android:icon="@drawable/price_changes"
+            android:title="@string/menu_price_change" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_open_houses"
+            android:icon="@drawable/open_houses"
+            android:title="@string/menu_open_house" />
+
+        <item
+            android:id="@+id/nav_nearby_for_rent"
+            android:icon="@drawable/nearby_for_rent"
+            android:title="@string/menu_nearby_house_for_rent" />
+        <item
+            android:id="@+id/nav_sold"
+            android:icon="@drawable/sold"
+            android:title="@string/menu_nearby_recently_sold" />
+        <item
+            android:id="@+id/nav_advanced_search"
+            android:icon="@drawable/search"
+            android:title="@string/menu_advanced_search" />
+        <item
+            android:id="@+id/nav_find_agent_office"
+            android:icon="@drawable/find_agent_office"
+            android:title="@string/menu_find_agent_office" />
+        <item
+            android:id="@+id/nav_saved_properties"
+            android:icon="@drawable/saved_properties"
+            android:title="@string/menu_saved_properties" />
+        <item
+            android:id="@+id/nav_saved_searches"
+            android:icon="@drawable/saved_searches"
+            android:title="@string/menu_saved_searches" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share"
+            android:title="@string/menu_share_app" />
+        <item
+            android:id="@+id/nav_app_help"
+            android:icon="@drawable/app_help"
+            android:title="@string/menu_app_help" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/login"
+            android:title="@string/menu_login" />
+        <item
+            android:id="@+id/nav_accessibility"
+            android:icon="@drawable/accessibility"
+            android:title="@string/menu_accessibility" />
+
+
+
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
-        </menu>
-    </item>
-
 </menu>
