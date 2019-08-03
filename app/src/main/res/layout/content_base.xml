@@ -16,6 +16,5 @@
         android:layout_height="match_parent"/>
 
     <include layout="@layout/fragment_head_main"/>
-    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
