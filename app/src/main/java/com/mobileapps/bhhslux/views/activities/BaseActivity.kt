@@ -1,5 +1,7 @@
 package com.mobileapps.bhhslux.views.activities
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.core.view.GravityCompat
@@ -159,6 +161,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnBack         ->  fragmentManager.popBackStack()
 
+            R.id.btnShare        ->  shareLinkPlayStore()
+
         }
     }
 
@@ -202,10 +206,10 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_share -> {
-
+                shareLinkPlayStore()
             }
             R.id.nav_app_help -> {
-
+                sendHelpEmail()
             }
             R.id.nav_login -> {
 
@@ -219,4 +223,32 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
+
+
+    fun shareLinkPlayStore()
+    {
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.type=getString(R.string.type_link)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.link_share))
+        startActivity(Intent.createChooser(shareIntent,""))
+    }
+
+    fun sendHelpEmail()
+    {
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse(getString(R.string.email_to))
+        intent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.email_subject))
+        intent.putExtra(Intent.EXTRA_TEXT,getString(R.string.email_text))
+
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
+
+
+
 }

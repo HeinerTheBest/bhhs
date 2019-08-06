@@ -36,4 +36,15 @@
     <string name="botton_menu_save">Save</string>
 
 
+    <string name="email_text">"*** Technical Details ***\n""\n""App Version: 5.800.70\n""Device Language: en-US\n""Phone: 5707109829\n""IP: 82.185.162.170\n""Signature App Id: 198\n""Title: BHHS\n""Build: PROD\n""Brand Name: Berkshire Hathaway HomeServices\n""Authenticated as Agent: No\n""Model: BLA-A09\n""Phone Brand :HUAWEI\n""\n""Carrier :\n""\n""SDK Version: 28\n""Android Version: 9\n""Screen Height: 1360\n""Screen Width: 720"</string>
+    <string name="email_subject">[BHHS] App Help</string>
+    <string name="email_to">mailto: bhhshelp@smarteragent.com</string>
+
+
+    <string name="type_link">text/plain</string>
+    <string name="link_share">Download Berkshire Hathaway HomeServices mobile app here: http://app.bhhsre.com/BHHS</string>
+
+
+
+
 </resources>
