@@ -27,7 +27,7 @@
             android:icon="@drawable/nearby_for_rent"
             android:title="@string/menu_nearby_house_for_rent" />
         <item
-            android:id="@+id/nav_sold"
+            android:id="@+id/nav_recently_sold"
             android:icon="@drawable/sold"
             android:title="@string/menu_nearby_recently_sold" />
         <item

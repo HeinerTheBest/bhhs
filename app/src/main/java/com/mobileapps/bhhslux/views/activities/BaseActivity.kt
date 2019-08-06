@@ -1,7 +1,6 @@
 package com.mobileapps.bhhslux.views.activities
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -11,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
@@ -29,24 +29,14 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
-
-
         nav_view.setNavigationItemSelectedListener(this)
 
         //Todo 01 Don't delete this
         mSectionsPagerAdapter = PagerAdapter(supportFragmentManager)
         containerForPictures.adapter = mSectionsPagerAdapter
 
-
-
-
-
     }
 
-    fun close(view : View)
-    {
-        fragmentManager.popBackStack()
-    }
 
     private fun replaceFragment(fragment:Fragment)
     {
@@ -165,25 +155,10 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         {
             R.id.imgBurgerButton ->  drawer_layout.openDrawer(GravityCompat.START)
 
-            R.id.imgCloseButton ->  drawer_layout.closeDrawer(Gravity.LEFT)
+            R.id.imgCloseButton  ->  drawer_layout.closeDrawer(Gravity.LEFT)
 
-        }
-    }
+            R.id.btnBack         ->  fragmentManager.popBackStack()
 
-
-
-
-
-
-
-
-
-    override fun onBackPressed() {
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
         }
     }
 
@@ -191,23 +166,28 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_nearby_house_for_sale -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance()
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForSale = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_new_to_market -> {
-
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(newToMarket = true))
+                replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_price_changes -> {
-
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(priceChanged = true))
+                replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_open_houses -> {
-
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(openHouse = true))
+                replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_nearby_for_rent -> {
-
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForRent = true))
+                replaceFragment(showNearbyHousesForSale)
             }
-            R.id.nav_sold -> {
-
+            R.id.nav_recently_sold -> {
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyRecentlySold = true))
+                replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_advanced_search -> {
 
@@ -216,7 +196,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_saved_properties -> {
-
+                //todo validate if the user is loging
             }
             R.id.nav_saved_searches -> {
 
@@ -234,6 +214,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
         }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

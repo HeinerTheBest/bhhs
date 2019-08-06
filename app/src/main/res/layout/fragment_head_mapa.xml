@@ -9,20 +9,20 @@
 
 
     <ImageView
-        android:id="@+id/imgBack"
+        android:id="@+id/btnBack"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="8dp"
         android:layout_width="wrap_content"
-        android:onClick="close"
+        android:onClick="onClick"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/back"
         android:contentDescription="@string/button_for_go_back_description" />
 
     <ImageView
         android:id="@+id/imgIcon"
-        app:layout_constraintStart_toEndOf="@id/imgBack"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="8dp"

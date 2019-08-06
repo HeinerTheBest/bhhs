@@ -12,16 +12,19 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
+import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel
 
-class ShowHousesFragment : Fragment() {
+class ShowHousesFragment(filter: SearchFilter) : Fragment() {
 
-    public val TAG = "ShowHousesFragment"
+
     private lateinit var recyclerView:RecyclerView
     private lateinit var showHousesAdapter: ShowHousesAdapter
+    private var filter : SearchFilter = filter
 
     companion object {
-        fun newInstance() = ShowHousesFragment()
+        fun newInstance(filter : SearchFilter) = ShowHousesFragment(filter)
+
     }
 
     private lateinit var viewModel: ShowHousesViewModel
@@ -38,9 +41,8 @@ class ShowHousesFragment : Fragment() {
 
         var showHousesViewModel : ShowHousesViewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
 
-        showHousesViewModel.getArrayList().observe(this, Observer
+        showHousesViewModel.getHousesList(filter).observe(this, Observer
         {
-
             showHousesViewModel ->
             showHousesAdapter = ShowHousesAdapter(this@ShowHousesFragment.context,showHousesViewModel!!)
             recyclerView.layoutManager = LinearLayoutManager(this@ShowHousesFragment.context)
@@ -51,7 +53,6 @@ class ShowHousesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 
