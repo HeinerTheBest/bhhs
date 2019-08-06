@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".BaseActivity"
+    tools:context=".views.activities.BaseActivity"
     tools:layout_editor_absoluteY="56dp"
     tools:showIn="@layout/app_bar_base">
 
@@ -16,5 +16,11 @@
         android:layout_height="match_parent"/>
 
     <include layout="@layout/fragment_head_main"/>
+
+
+    <FrameLayout
+        android:id="@+id/fragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,27 +1,27 @@
-package com.mobileapps.bhhslux
+package com.mobileapps.bhhslux.views.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
-import kotlinx.android.synthetic.main.fragment_head_main.*
 
 class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     private var mSectionsPagerAdapter: PagerAdapter? = null
+    private val fragmentManager = getSupportFragmentManager()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +37,23 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mSectionsPagerAdapter = PagerAdapter(supportFragmentManager)
         containerForPictures.adapter = mSectionsPagerAdapter
 
+
+
+
+
+    }
+
+    fun close(view : View)
+    {
+        fragmentManager.popBackStack()
+    }
+
+    private fun replaceFragment(fragment:Fragment)
+    {
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragmentLayout,fragment)
+                .addToBackStack(fragment.tag)
+                .commit()
     }
 
 
@@ -50,7 +67,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment. newInstance(position + 1)
+            return PlaceholderFragment.newInstance(position + 1)
         }
 
         override fun getCount(): Int {
@@ -148,7 +165,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         {
             R.id.imgBurgerButton ->  drawer_layout.openDrawer(GravityCompat.START)
 
-            R.id.imgCloseButton  ->  drawer_layout.closeDrawer(Gravity.LEFT)
+            R.id.imgCloseButton ->  drawer_layout.closeDrawer(Gravity.LEFT)
 
         }
     }
@@ -174,7 +191,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_nearby_house_for_sale -> {
-                // Handle the camera action
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance()
+                replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_new_to_market -> {
 

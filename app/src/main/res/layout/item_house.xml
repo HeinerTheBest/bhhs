@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="ShowHousesBinding">
+
+        <variable
+            name="showHousesModel"
+            type="com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel" />
+
+    </data>
+
+
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_marginBottom="14dp"
+    android:layout_height="230dp">
+
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/housedemo" />
+
+    <View
+        app:layout_constraintTop_toTopOf="@id/tvDescription"
+        android:background="@color/colorTransparentBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvPrice"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@{showHousesModel.price}"
+        />
+
+    <TextView
+        android:id="@+id/tvHouseAddress"
+       style="@style/Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@{showHousesModel.address}"
+        />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvStatus"
+        android:text="@{showHousesModel.shortDescription}"
+        />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@{showHousesModel.status}"
+        android:background="@color/appBackGround"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
