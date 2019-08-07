@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.SearchFilter
+import com.mobileapps.bhhslux.views.fragments.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
@@ -215,7 +216,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_accessibility -> {
-
+                val accessibility = AccessibilityFragment.newInstance()
+                replaceFragment(accessibility)
             }
         }
 

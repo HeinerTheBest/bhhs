@@ -43,8 +43,7 @@
 
     <string name="type_link">text/plain</string>
     <string name="link_share">Download Berkshire Hathaway HomeServices mobile app here: http://app.bhhsre.com/BHHS</string>
-
-
+    <string name="url_accessibility">https://www.homeservices.com/accessibility.aspx</string>
 
 
 </resources>
