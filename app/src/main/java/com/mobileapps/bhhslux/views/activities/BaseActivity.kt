@@ -23,6 +23,7 @@ import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.ContactFragment
 import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
+import com.mobileapps.bhhslux.views.fragments.SortByFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.contact_fragment.*
 import kotlinx.android.synthetic.main.content_base.*
@@ -185,11 +186,16 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnEmailToSee   ->  sendHelpEmail() //Todo can do better
 
+            R.id.btnSort         ->  showSortDialog()
+
 
         }
     }
 
-
+    private fun showSortDialog() {
+        val sortFragment = SortByFragment()
+        sortFragment.show(supportFragmentManager, "sort_fragment")
+    }
 
 
     private fun showContactDialog() {
