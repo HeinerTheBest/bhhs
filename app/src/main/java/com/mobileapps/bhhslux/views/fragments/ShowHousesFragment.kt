@@ -15,12 +15,11 @@ import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel
 
-class ShowHousesFragment(filter: SearchFilter) : Fragment() {
+class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 
 
     private lateinit var recyclerView:RecyclerView
     private lateinit var showHousesAdapter: ShowHousesAdapter
-    private var filter : SearchFilter = filter
 
     companion object {
         fun newInstance(filter : SearchFilter) = ShowHousesFragment(filter)
@@ -39,7 +38,7 @@ class ShowHousesFragment(filter: SearchFilter) : Fragment() {
 
         recyclerView = view.findViewById(R.id.rvShowHouses) as RecyclerView
 
-        var showHousesViewModel : ShowHousesViewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
+        val showHousesViewModel : ShowHousesViewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
 
         showHousesViewModel.getHousesList(filter).observe(this, Observer
         {

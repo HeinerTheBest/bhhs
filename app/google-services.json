@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "8552626557",
+    "firebase_url": "https://bhhslux.firebaseio.com",
+    "project_id": "bhhslux",
+    "storage_bucket": "bhhslux.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8552626557:android:d26cc5b720c7b130",
+        "android_client_info": {
+          "package_name": "com.mobileapps.bhhslux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8552626557-durl1p4pdn8jssqkpncbcqu727s4bk7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobileapps.bhhslux",
+            "certificate_hash": "db524114fbd8cfb3d445c9c0b6d5732eb1189d70"
+          }
+        },
+        {
+          "client_id": "8552626557-rqcft4t0666qhrre5fm3mmv7ib4kgg59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3jvoWR-COETjPM2vmzrXGMbtMcLLGGLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8552626557-rqcft4t0666qhrre5fm3mmv7ib4kgg59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

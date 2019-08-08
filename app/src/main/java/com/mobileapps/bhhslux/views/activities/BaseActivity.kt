@@ -20,10 +20,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.AccessibilityFragment
-import com.mobileapps.bhhslux.views.fragments.ContactFragment
-import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
-import com.mobileapps.bhhslux.views.fragments.SortByFragment
+import com.mobileapps.bhhslux.views.fragments.*
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.contact_fragment.*
 import kotlinx.android.synthetic.main.content_base.*
@@ -249,7 +246,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 sendHelpEmail()
             }
             R.id.nav_login -> {
-
+                val login = SignUpFragment.newInstance()
+                replaceFragment(login)
             }
             R.id.nav_accessibility -> {
                 val accessibility = AccessibilityFragment.newInstance()

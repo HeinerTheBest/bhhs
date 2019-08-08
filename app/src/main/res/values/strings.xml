@@ -57,6 +57,21 @@
     <string name="distance_closes_first">Distance, Closes First</string>
     <string name="price_low_to_high">Price, Low to High</string>
     <string name="price_high_to_low">Price, High to Low</string>
+    <string name="login_to_berkshire_hathaway_homeservices_home_search_s_app">Login to Berkshire Hathaway HomeServices Home Search\'s app</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="sso_1_4">SSO 1.4</string>
+    <string name="create_account">Create Account</string>
+    <string name="first_name">First Name*</string>
+    <string name="last_name">Last Name*</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_input">Email*</string>
+    <string name="password_input">Password*</string>
+    <string name="confirm_password">Confirm Password*</string>
+    <string name="create_account_button">CREATE ACCOUNT</string>
+    <string name="version_register">SSO 1.1</string>
 
 
 </resources>
