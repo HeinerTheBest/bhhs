@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.AccessibilityFragment
+import com.mobileapps.bhhslux.views.fragments.ContactFragment
 import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
@@ -164,7 +165,14 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnShare        ->  shareLinkPlayStore()
 
+            R.id.btnContact      ->  showContactDialog()
+
         }
+    }
+
+    private fun showContactDialog() {
+        val contactFragment = ContactFragment()
+        contactFragment.show(supportFragmentManager, "contact_fragment")
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
