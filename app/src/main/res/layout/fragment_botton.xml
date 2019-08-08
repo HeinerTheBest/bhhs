@@ -11,6 +11,7 @@
     <LinearLayout
         android:id="@+id/btnContact"
         android:layout_width="0dp"
+        android:onClick="onClick"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
         android:gravity="center_horizontal"

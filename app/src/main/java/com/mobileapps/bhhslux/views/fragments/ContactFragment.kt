@@ -1,16 +1,23 @@
 package com.mobileapps.bhhslux.views.fragments
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-import com.mobileapps.bhhslux.R
 
-class ContactFragment : BottomSheetDialogFragment() {
+import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.viewmodel.ContactViewModel
+import kotlinx.android.synthetic.main.contact_fragment.*
+
+class ContactFragment : BottomSheetDialogFragment(){
+
 
     companion object {
         fun newInstance() = ContactFragment()
@@ -26,7 +33,10 @@ class ContactFragment : BottomSheetDialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ContactViewModel::class.java)
+
         // TODO: Use the ViewModel
+
     }
+
 
 }

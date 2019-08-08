@@ -55,6 +55,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tvSubSubTitle"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         app:srcCompat="@drawable/user" />
 
     <EditText

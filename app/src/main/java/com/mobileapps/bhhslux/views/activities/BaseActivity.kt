@@ -1,22 +1,30 @@
 package com.mobileapps.bhhslux.views.activities
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.ContactFragment
 import com.mobileapps.bhhslux.views.fragments.ShowHousesFragment
 import kotlinx.android.synthetic.main.activity_base.*
+import kotlinx.android.synthetic.main.contact_fragment.*
 import kotlinx.android.synthetic.main.content_base.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
@@ -25,6 +33,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private var mSectionsPagerAdapter: PagerAdapter? = null
     private val fragmentManager = getSupportFragmentManager()
+    private val CALL_REQUEST_CODE = 101
 
 
 
@@ -38,7 +47,12 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //Todo 01 Don't delete this
         mSectionsPagerAdapter = PagerAdapter(supportFragmentManager)
         containerForPictures.adapter = mSectionsPagerAdapter
+    }
 
+    private fun makeRequest() {
+        ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.CALL_PHONE),
+                CALL_REQUEST_CODE)
     }
 
 
@@ -167,8 +181,16 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnContact      ->  showContactDialog()
 
+            R.id.btnCall         ->  callContact()
+
+            R.id.btnEmailToSee   ->  sendHelpEmail() //Todo can do better
+
+
         }
     }
+
+
+
 
     private fun showContactDialog() {
         val contactFragment = ContactFragment()
@@ -245,6 +267,25 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.link_share))
         startActivity(Intent.createChooser(shareIntent,""))
     }
+
+
+    private fun callContact() {
+        val permission = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CALL_PHONE)
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            Log.i("Heiner", "Permission to record denied")
+            makeRequest()
+        }
+        else
+        {
+            val callIntent = Intent(Intent.ACTION_CALL, Uri.parse(getString(R.string.number_phone_to_call)))
+            startActivity(callIntent)
+        }
+    }
+
+
+
 
     fun sendHelpEmail()
     {

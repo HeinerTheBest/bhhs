@@ -44,6 +44,15 @@
     <string name="type_link">text/plain</string>
     <string name="link_share">Download Berkshire Hathaway HomeServices mobile app here: http://app.bhhsre.com/BHHS</string>
     <string name="url_accessibility">https://www.homeservices.com/accessibility.aspx</string>
+    <string name="hodnett_cooper_real_estate">Hodnett Cooper Real Estate</string>
+    <string name="call_to_see">Call to See</string>
+    <string name="contact">CONTACT</string>
+    <string name="email_for_info">Email for info</string>
+    <string name="cancel">Cancel</string>
+    <string name="icon">Icon</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="mail_icon">Mail Icon</string>
+    <string name="number_phone_to_call">tel:  2084595326</string>
 
 
 </resources>

@@ -3,6 +3,8 @@
     package="com.mobileapps.bhhslux">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_launcher_original"
