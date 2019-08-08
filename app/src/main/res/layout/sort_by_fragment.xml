@@ -36,17 +36,19 @@
 
     <TextView
         android:id="@+id/btnSortByDistance"
-        app:layout_constraintTop_toBottomOf="@id/v1"
-        app:layout_constraintBottom_toTopOf="@id/v2"
-        android:text="@string/distance_closes_first"
         android:layout_width="match_parent"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"
-        app:layout_constraintStart_toEndOf="@id/imgPhone"
+        android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:gravity="center_horizontal"
         android:onClick="onClick"
-        android:layout_height="wrap_content" />
+        android:text="@string/distance_closes_first"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/v2"
+        app:layout_constraintStart_toEndOf="@id/imgPhone"
+        app:layout_constraintTop_toBottomOf="@id/v1"
+        android:background="?attr/selectableItemBackground"
+        />
 
     <ImageView
         android:id="@+id/imgDistance"
@@ -86,7 +88,10 @@
         app:layout_constraintStart_toEndOf="@id/imgPhone"
         android:layout_marginStart="15dp"
         android:onClick="onClick"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+
+        />
 
     <ImageView
         android:id="@+id/imgPhone"
@@ -128,7 +133,10 @@
         android:layout_marginStart="15dp"
         android:textColor="@color/colorBlack"
         android:onClick="onClick"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+
+        />
 
     <ImageView
         android:id="@+id/imgEmail"

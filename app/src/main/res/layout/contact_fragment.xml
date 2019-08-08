@@ -92,6 +92,7 @@
         app:layout_constraintStart_toEndOf="@id/imgPhone"
         android:layout_marginStart="15dp"
         android:onClick="onClick"
+        android:background="?attr/selectableItemBackground"
         android:layout_height="wrap_content" />
 
     <ImageView
@@ -110,7 +111,6 @@
 
     <TextView
         app:layout_constraintTop_toBottomOf="@id/imgPhone"
-
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:id="@+id/v3"
@@ -129,6 +129,7 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/imgEmail"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginStart="15dp"
         android:onClick="onClick"
         android:layout_height="wrap_content" />
