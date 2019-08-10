@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
 
 
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        
+
         binding.viewModel = viewModel
 
         // TODO: Use the ViewModel
