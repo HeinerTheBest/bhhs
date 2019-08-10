@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.PagerAdapter
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
@@ -30,9 +31,11 @@ import kotlinx.android.synthetic.main.fragment_main.view.*
 class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
-    private var mSectionsPagerAdapter: PagerAdapter? = null
+    private val mSectionsPagerAdapter = TopFiveAdapter(supportFragmentManager)
     private val fragmentManager = supportFragmentManager
     private val CALL_REQUEST_CODE = 101
+    private lateinit var viewModel: BaseActivityViewModel
+
 
 
 
@@ -40,12 +43,22 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setTheme(R.style.AppTheme) //Set The splash
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
-
         nav_view.setNavigationItemSelectedListener(this)
 
-        //Todo 01 Don't delete this
-        mSectionsPagerAdapter = TopFiveAdapter(supportFragmentManager)
+        //SetUp UI
         topFiveContainerForPictures.adapter = mSectionsPagerAdapter
+
+        viewModel = ViewModelProviders.of(this).get(BaseActivityViewModel::class.java)
+
+    }
+
+    fun shareLinkPlayStore()
+    {
+        val shareIntent = Intent()
+        shareIntent.action = Intent.ACTION_SEND
+        shareIntent.type = getString(R.string.type_link)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.link_share))
+        startActivity(Intent.createChooser(shareIntent,""))
     }
 
 
@@ -67,7 +80,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    //Generic OnClick
+    //Generic OnClick to remove with MVVM
     fun onClick(view : View)
     {
         when (view.id)
@@ -76,7 +89,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.imgCloseButton  ->  drawer_layout.closeDrawer(Gravity.LEFT)
 
-            R.id.btnBack         ->  fragmentManager.popBackStack()
+            R.id.btnBack         ->  closeFragment()
 
             R.id.btnShare        ->  shareLinkPlayStore()
 
@@ -88,6 +101,11 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnSort         ->  showSortDialog()
         }
+    }
+
+    fun closeFragment()
+    {
+        fragmentManager.popBackStack()
     }
 
     private fun showSortDialog() {
@@ -163,14 +181,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-    private fun shareLinkPlayStore()
-    {
-        val shareIntent = Intent()
-        shareIntent.action = Intent.ACTION_SEND
-        shareIntent.type=getString(R.string.type_link)
-        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.link_share))
-        startActivity(Intent.createChooser(shareIntent,""))
-    }
+
 
 
     private fun callContact() {
