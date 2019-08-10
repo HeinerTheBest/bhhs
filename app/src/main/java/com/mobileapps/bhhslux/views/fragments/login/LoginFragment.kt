@@ -20,28 +20,34 @@ class LoginFragment : Fragment() {
     }
 
     private lateinit var viewModel: LoginViewModel
+    private lateinit var binding : LoginFragmentBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+
+    }
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val loginViewModel : LoginViewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        val binding : LoginFragmentBinding = DataBindingUtil.setContentView(this.activity!!,R.layout.login_fragment)
-        binding.viewModel = loginViewModel
-
-
-
+        binding = DataBindingUtil.inflate(inflater,R.layout.login_fragment, container, false)
+        return binding.root
 
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+        
+        binding.viewModel = viewModel
+
         // TODO: Use the ViewModel
         viewModel.updateUI()
     }
