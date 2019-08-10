@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.model
+package com.mobileapps.bhhslux.model.house
 
 class House
 {

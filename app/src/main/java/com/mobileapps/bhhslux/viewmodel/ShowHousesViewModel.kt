@@ -6,8 +6,8 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mobileapps.bhhslux.R
-import com.mobileapps.bhhslux.model.House
-import com.mobileapps.bhhslux.model.SearchFilter
+import com.mobileapps.bhhslux.model.house.House
+import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
 import com.squareup.picasso.Picasso
 
 class ShowHousesViewModel : ViewModel
@@ -76,10 +76,10 @@ class ShowHousesViewModel : ViewModel
 
 
 
-        val house1 = House("1","$1,350","1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166","For Sale - Active","4bd 3 ba","https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg")
-        val house2 = House("2","$399,900","1590 Arden Drive SW Marietta, GA 30008-3731","For Sale - Active","3bd 2 ba","https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg")
-        val house3 = House("3","$310,000","1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166","For Sale - Active","4bd 3 ba","https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg")
-        val house4 = House("4","$295,775","1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166","For Sale - Active","4bd 3 ba","https://upload.wikimedia.org/wikipedia/commons/d/d8/SaltBoxHouse1.jpg")
+        val house1 = House("1", "$1,350", "1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166", "For Sale - Active", "4bd 3 ba", "https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg")
+        val house2 = House("2", "$399,900", "1590 Arden Drive SW Marietta, GA 30008-3731", "For Sale - Active", "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg")
+        val house3 = House("3", "$310,000", "1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166", "For Sale - Active", "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg")
+        val house4 = House("4", "$295,775", "1651 Massachussetts Avenue SW#17 Marietta, GA 30008-7166", "For Sale - Active", "4bd 3 ba", "https://upload.wikimedia.org/wikipedia/commons/d/d8/SaltBoxHouse1.jpg")
 
 
 

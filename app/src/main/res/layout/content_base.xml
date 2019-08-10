@@ -15,6 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_background"
+        android:layout_height="match_parent"/>
+
     <include layout="@layout/fragment_head_main"/>
 
 
