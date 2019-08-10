@@ -9,7 +9,7 @@
 
         <variable
             name="showHousesModel"
-            type="com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel" />
+            type="com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel" />
 
     </data>
 

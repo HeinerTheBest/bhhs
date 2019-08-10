@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.advancedsearch
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mobileapps.bhhslux.R
-import com.mobileapps.bhhslux.viewmodel.AdvancedSearchViewModel
 
 class AdvancedSearchFragment : Fragment() {
 

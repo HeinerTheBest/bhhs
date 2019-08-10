@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.showhouses
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel
 
 class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 

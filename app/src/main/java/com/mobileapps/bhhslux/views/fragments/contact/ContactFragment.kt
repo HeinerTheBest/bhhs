@@ -1,10 +1,7 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.contact
 
-import android.content.Intent
-import android.net.Uri
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +9,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
 import com.mobileapps.bhhslux.R
-import com.mobileapps.bhhslux.viewmodel.ContactViewModel
 
 class ContactFragment : BottomSheetDialogFragment(){
 

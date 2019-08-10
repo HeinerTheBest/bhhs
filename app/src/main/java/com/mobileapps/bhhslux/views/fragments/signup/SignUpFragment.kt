@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.signup
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,26 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 import com.mobileapps.bhhslux.R
 
-class SortByFragment : BottomSheetDialogFragment() {
+class SignUpFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SortByFragment()
+        fun newInstance() = SignUpFragment()
     }
 
-    private lateinit var viewModel: SortByViewModel
+    private lateinit var viewModel: SignUpViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.sort_by_fragment, container, false)
+        return inflater.inflate(R.layout.sign_up_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SortByViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

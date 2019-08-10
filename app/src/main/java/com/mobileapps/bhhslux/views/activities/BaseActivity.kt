@@ -18,7 +18,11 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.*
+import com.mobileapps.bhhslux.views.fragments.accessibility.AccessibilityFragment
+import com.mobileapps.bhhslux.views.fragments.contact.ContactFragment
+import com.mobileapps.bhhslux.views.fragments.login.LoginFragment
+import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesFragment
+import com.mobileapps.bhhslux.views.fragments.sortby.SortByFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
 import kotlinx.android.synthetic.main.fragment_main.view.*

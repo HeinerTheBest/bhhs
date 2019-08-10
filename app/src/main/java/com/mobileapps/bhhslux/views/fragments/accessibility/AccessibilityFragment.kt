@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.accessibility
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

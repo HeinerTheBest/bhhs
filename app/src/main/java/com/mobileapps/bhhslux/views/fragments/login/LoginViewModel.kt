@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.viewmodel
+package com.mobileapps.bhhslux.views.fragments.login
 
 import android.text.Editable
 import android.util.Log

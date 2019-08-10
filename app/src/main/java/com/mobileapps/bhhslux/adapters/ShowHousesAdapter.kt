@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.databinding.ShowHousesBinding
-import com.mobileapps.bhhslux.viewmodel.ShowHousesViewModel
+import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel
 
 class ShowHousesAdapter(private val context: Context?, private val arrayList: ArrayList<ShowHousesViewModel>) : RecyclerView.Adapter<ShowHousesAdapter.CustomView>()
 {

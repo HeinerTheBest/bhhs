@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".views.fragments.AccessibilityFragment">
+    tools:context=".views.fragments.accessibility.AccessibilityFragment">
 
     <data>
         <variable
             name="viewModel"
-            type="com.mobileapps.bhhslux.viewmodel.LoginViewModel" />
+            type="com.mobileapps.bhhslux.views.fragments.login.LoginViewModel" />
     </data>
 
 

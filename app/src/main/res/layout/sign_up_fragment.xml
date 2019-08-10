@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
-    tools:context=".views.fragments.AccessibilityFragment">
+    tools:context=".views.fragments.accessibility.AccessibilityFragment">
 
     <include
         android:id="@+id/top"

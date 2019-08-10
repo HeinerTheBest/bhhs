@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.viewmodel
+package com.mobileapps.bhhslux.views.fragments.advancedsearch
 
 import androidx.lifecycle.ViewModel;
 
