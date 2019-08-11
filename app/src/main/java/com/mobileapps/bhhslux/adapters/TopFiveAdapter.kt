@@ -3,7 +3,6 @@ package com.mobileapps.bhhslux.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.mobileapps.bhhslux.views.activities.BaseActivity
 import com.mobileapps.bhhslux.views.fragments.topfivehouse.TopFiveHousesHolderFragment
 
 class TopFiveAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm)

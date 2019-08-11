@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.model.datasource.remote.mock.MockDataBase
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class TopFiveHousesHolderFragment : Fragment() {
+
+    private val db : MockDataBase = MockDataBase()
+
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -23,41 +28,21 @@ class TopFiveHousesHolderFragment : Fragment() {
         val indexText = arguments!!.getInt(ARG_SECTION_NUMBER).toString()+" of 5"
 
 
-        if (arguments!!.getInt(ARG_SECTION_NUMBER) == 1) {
-            rootView.tvPrice.text = "$619,000"
-            rootView.imgPicture.setImageResource(R.drawable.housedemo)
-            rootView.tvHouseAddress.text = "337 Oak Grove Island Drive Brunswick, GA 31523"
-            rootView.tvDescription.text = "5bd 5ba"
-            rootView.tvIndex.text = indexText
+        val houses = db.getHouses(5)
+
+        for(i in 0..5)
+        {
+            if (arguments!!.getInt(ARG_SECTION_NUMBER) == i+1) {
+                rootView.tvPrice.text = houses[i].price
+                rootView.imgPicture.setImageResource(R.drawable.housedemo)
+                rootView.tvHouseAddress.text = houses[i].address
+                rootView.tvDescription.text = houses[i].shortDescription
+                rootView.tvIndex.text = indexText
+                Picasso.with(context).load(houses[i].imagePatch).placeholder(R.drawable.housedemo).into(rootView.imgPicture)
+            }
         }
-        if (arguments!!.getInt(ARG_SECTION_NUMBER) == 2) {
-            rootView.tvPrice.text = "$2,500,000"
-            rootView.imgPicture.setImageResource(R.drawable.housedemo)
-            rootView.tvHouseAddress.text = "328 Cedar Bank Riad St, GA 31523"
-            rootView.tvDescription.text = "2bd 3.5ba"
-            rootView.tvIndex.text = indexText
-        }
-        if (arguments!!.getInt(ARG_SECTION_NUMBER) == 3) {
-            rootView.tvPrice.text = "$300,00"
-            rootView.imgPicture.setImageResource(R.drawable.housedemo)
-            rootView.tvHouseAddress.text = "337 Oak Grove Island Drive Brunswick, GA 31523"
-            rootView.tvDescription.text = "5bd 5ba"
-            rootView.tvIndex.text = indexText
-        }
-        if (arguments!!.getInt(ARG_SECTION_NUMBER) == 4) {
-            rootView.tvPrice.text = "$619,000"
-            rootView.imgPicture.setImageResource(R.drawable.housedemo)
-            rootView.tvHouseAddress.text = "337 Oak Grove Island Drive Brunswick, GA 31523"
-            rootView.tvDescription.text = "5bd 5ba"
-            rootView.tvIndex.text = indexText
-        }
-        if (arguments!!.getInt(ARG_SECTION_NUMBER) == 5) {
-            rootView.tvPrice.text = "$619,000"
-            rootView.imgPicture.setImageResource(R.drawable.housedemo)
-            rootView.tvHouseAddress.text = "337 Oak Grove Island Drive Brunswick, GA 31523"
-            rootView.tvDescription.text = "5bd 5ba"
-            rootView.tvIndex.text = indexText
-        }
+
+
         return rootView
     }
 

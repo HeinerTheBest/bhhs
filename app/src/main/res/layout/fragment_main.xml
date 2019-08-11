@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -20,7 +20,7 @@
         style="@style/Text"
         app:layout_constraintBottom_toTopOf="@+id/tvHouseAddress"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="$2,500,000"
+        tool:text="$2,500,000"
         />
 
     <TextView
@@ -28,7 +28,7 @@
         style="@style/Text"
         app:layout_constraintBottom_toTopOf="@id/tvIndex"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="17626 DeerFlat Rd. Caldwell, ID 83607"/>
+        tool:text="17626 DeerFlat Rd. Caldwell, ID 83607"/>
 
     <TextView
         android:id="@+id/tvIndex"
@@ -36,15 +36,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="3 of 5"
+        tool:text="3 of 5"
         />
 
     <TextView
         android:id="@+id/tvDescription"
         style="@style/Text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvIndex"
-        android:text="6bd 3 ba"
+        app:layout_constraintBottom_toTopOf="@+id/tvHouseAddress"
+        tool:text="6bd 3 ba"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
