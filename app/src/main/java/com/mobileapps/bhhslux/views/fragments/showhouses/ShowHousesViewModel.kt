@@ -36,7 +36,7 @@ class ShowHousesViewModel : ViewModel
 
     constructor(house : House) : super() {
         this.id               = house.id
-        this.price            = house.price
+        this.price            = "$${house.price}"
         this.address          = house.address
         this.searchType       = house.searchType
         this.shortDescription = house.shortDescription
@@ -46,7 +46,7 @@ class ShowHousesViewModel : ViewModel
         visibleOpenHouse   = if(house.isOpenHouse) View.VISIBLE else View.GONE
         status             = if(house.isActive) "Active" else "Pending"
 
-        oldPrice = house.oldPrice ?: ""
+        oldPrice = "$${house.oldPrice}"
         visibleOldPrice = if(house.oldPrice != null) View.VISIBLE else View.GONE
 
 

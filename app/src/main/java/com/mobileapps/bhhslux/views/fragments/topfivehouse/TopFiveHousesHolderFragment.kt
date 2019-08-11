@@ -1,5 +1,6 @@
 package com.mobileapps.bhhslux.views.fragments.topfivehouse
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ class TopFiveHousesHolderFragment : Fragment() {
     private val db : MockDataBase = MockDataBase()
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -33,7 +35,7 @@ class TopFiveHousesHolderFragment : Fragment() {
         for(i in 0..5)
         {
             if (arguments!!.getInt(ARG_SECTION_NUMBER) == i+1) {
-                rootView.tvPrice.text = houses[i].price
+                rootView.tvPrice.text = "$${houses[i].price}"
                 rootView.imgPicture.setImageResource(R.drawable.housedemo)
                 rootView.tvHouseAddress.text = houses[i].address
                 rootView.tvDescription.text = houses[i].shortDescription
