@@ -123,27 +123,27 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_nearby_house_for_sale -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForSale = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForSale = true,justSearchType = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_new_to_market -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(newToMarket = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(newToMarket = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_price_changes -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(priceChanged = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(priceChanged = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_open_houses -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(openHouse = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(openHouse = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_nearby_for_rent -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForRent = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyForRent = true,justSearchType = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_recently_sold -> {
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyRecentlySold = true))
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(SearchFilter(nearbyRecentlySold = true,justSearchType = true))
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_advanced_search -> {
