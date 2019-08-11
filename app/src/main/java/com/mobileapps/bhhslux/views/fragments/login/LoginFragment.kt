@@ -45,8 +45,6 @@ class LoginFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-
         binding.viewModel = viewModel
 
         // TODO: Use the ViewModel

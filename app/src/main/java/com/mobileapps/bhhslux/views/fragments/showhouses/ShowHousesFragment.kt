@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.sortby.SortByFragment
 import com.mobileapps.bhhslux.views.fragments.sortby.SortByViewModel
 
 class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
@@ -40,6 +39,8 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
         return inflater.inflate(R.layout.show_houses_fragment, container, false)
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvShowHouses) as RecyclerView
@@ -56,14 +57,6 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(this@ShowHousesFragment.context)
             recyclerView.adapter = showHousesAdapter
         })
-
-    }
-
-    private fun startSortByViewFragment()
-    {
-        val sortByFragment = SortByFragment.newInstance()
-        val fragmentManager = activity?.supportFragmentManager
-        sortByFragment.show(fragmentManager, "sort_fragment")
 
     }
 

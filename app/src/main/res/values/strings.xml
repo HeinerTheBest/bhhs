@@ -72,6 +72,8 @@
     <string name="confirm_password">Confirm Password*</string>
     <string name="create_account_button">CREATE ACCOUNT</string>
     <string name="version_register">SSO 1.1</string>
+    <string name="new_to_market">New to Market</string>
+    <string name="open_house">Open House</string>
 
 
 </resources>

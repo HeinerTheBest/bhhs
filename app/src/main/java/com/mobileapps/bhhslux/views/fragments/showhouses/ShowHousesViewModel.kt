@@ -1,7 +1,9 @@
 package com.mobileapps.bhhslux.views.fragments.showhouses
 
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
+import androidx.databinding.Bindable
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +21,12 @@ class ShowHousesViewModel : ViewModel
     var searchType = ""
     var shortDescription = ""
     var imagePatch       = ""
+    var status           = "Active"
+
+
+    var visibleNewToMarket = View.VISIBLE
+
+    var visibleOpenHouse = View.VISIBLE
 
 
     val db : MockDataBase = MockDataBase()
@@ -32,6 +40,12 @@ class ShowHousesViewModel : ViewModel
         this.searchType       = house.searchType
         this.shortDescription = house.shortDescription
         this.imagePatch       = house.imagePatch
+
+        visibleNewToMarket = if(house.isNewToMarket) View.VISIBLE else View.GONE
+        visibleOpenHouse   = if(house.isOpenHouse) View.VISIBLE else View.GONE
+        status             = if(house.isActive) "Active" else "Pending"
+
+
     }
 
 
@@ -75,6 +89,8 @@ class ShowHousesViewModel : ViewModel
         {
             Log.d("Heiner","nearby recently sold")
         }
+
+
 
 
         arrayListMutableLiveData.value = db.getHouses()

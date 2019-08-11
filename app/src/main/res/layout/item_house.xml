@@ -56,8 +56,38 @@
         android:id="@+id/tvDescription"
         style="@style/Text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvStatus"
+        app:layout_constraintBottom_toTopOf="@id/tvSearchType"
         android:text="@{showHousesModel.shortDescription}"
+        />
+
+    <TextView
+        android:id="@+id/tvSearchType"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintEnd_toStartOf="@id/tvNewToMarket"
+        android:text="@{showHousesModel.searchType}"
+        android:background="@color/appBackGround"
+        />
+
+    <TextView
+        android:id="@+id/tvNewToMarket"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintEnd_toStartOf="@id/tvOpenHouse"
+        android:text="@string/new_to_market"
+        android:visibility="@{showHousesModel.visibleNewToMarket}"
+        android:background="@color/appBackGround"
+        />
+
+    <TextView
+        android:id="@+id/tvOpenHouse"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintEnd_toStartOf="@id/tvStatus"
+        android:text="@string/open_house"
+        android:visibility="@{showHousesModel.visibleOpenHouse}"
+
+        android:background="@color/appBackGround"
         />
 
     <TextView
@@ -65,9 +95,13 @@
         style="@style/Text"
         app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@{showHousesModel.searchType}"
+        android:text="@{showHousesModel.status}"
         android:background="@color/appBackGround"
         />
+
+
+
+
 
 
 
