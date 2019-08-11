@@ -3,7 +3,6 @@ package com.mobileapps.bhhslux.views.fragments.showhouses
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import androidx.databinding.Bindable
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,6 +15,7 @@ import com.squareup.picasso.Picasso
 class ShowHousesViewModel : ViewModel
 {
     var id    = ""
+    var oldPrice = ""
     var price = ""
     var address = ""
     var searchType = ""
@@ -25,11 +25,12 @@ class ShowHousesViewModel : ViewModel
 
 
     var visibleNewToMarket = View.VISIBLE
+    var visibleOldPrice    = View.VISIBLE
 
     var visibleOpenHouse = View.VISIBLE
 
 
-    val db : MockDataBase = MockDataBase()
+    private val db : MockDataBase = MockDataBase()
 
     constructor() : super()
 
@@ -44,6 +45,9 @@ class ShowHousesViewModel : ViewModel
         visibleNewToMarket = if(house.isNewToMarket) View.VISIBLE else View.GONE
         visibleOpenHouse   = if(house.isOpenHouse) View.VISIBLE else View.GONE
         status             = if(house.isActive) "Active" else "Pending"
+
+        oldPrice = house.oldPrice ?: ""
+        visibleOldPrice = if(house.oldPrice != null) View.VISIBLE else View.GONE
 
 
     }

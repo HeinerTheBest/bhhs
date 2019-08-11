@@ -36,11 +36,23 @@
         android:background="@color/colorTransparentBlack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/tvOldPrice"
+        style="@style/Text"
+        app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorRed"
+        android:visibility="@{showHousesModel.visibleOldPrice}"
+        android:text="@{showHousesModel.oldPrice}"
+        />
+
     <TextView
         android:id="@+id/tvPrice"
         style="@style/Text"
         app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvOldPrice"
         android:text="@{showHousesModel.price}"
         />
 
