@@ -102,7 +102,7 @@ class ShowHousesViewModel : ViewModel
 
 
 
-        arrayListMutableLiveData.value = db.getHouses()
+        arrayListMutableLiveData.value = db.getFilterHousesByFilter(filter)
 
 
 
