@@ -126,6 +126,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
         android:visibility="@{viewModel.visibleLogIn}"
+        android:onClick="@{(view) -> viewModel.startSignUpFragment()}"
         android:background="@drawable/shape_default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

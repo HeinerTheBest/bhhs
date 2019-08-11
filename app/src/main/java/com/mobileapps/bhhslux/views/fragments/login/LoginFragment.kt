@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.databinding.LoginFragmentBinding
+import com.mobileapps.bhhslux.views.fragments.signup.SignUpFragment
 
 class LoginFragment : Fragment() {
 
@@ -50,7 +51,13 @@ class LoginFragment : Fragment() {
 
         // TODO: Use the ViewModel
         viewModel.updateUI()
+        val signUpFragment = SignUpFragment.newInstance()
+        val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.fragmentLayout,signUpFragment)
+        fragmentTransaction?.addToBackStack(null)
+        viewModel.setFragmentTransaction(fragmentTransaction)
     }
+
 
 
 

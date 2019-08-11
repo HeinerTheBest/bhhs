@@ -1,21 +1,26 @@
 package com.mobileapps.bhhslux.views.fragments.login
 
+import android.app.Activity
 import android.text.Editable
 import android.util.Log
 import android.view.View
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.PropertyChangeRegistry
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.user.User
+import com.mobileapps.bhhslux.views.fragments.signup.SignUpFragment
 
 class LoginViewModel() : ViewModel(), Observable {
 
+    var fragmentTransaction2 : FragmentTransaction? = null
 
     val propertyChangeRegistry = PropertyChangeRegistry()
     lateinit var email : String
@@ -127,6 +132,16 @@ class LoginViewModel() : ViewModel(), Observable {
     fun isUserLoged() : Boolean
     {
         return user?.email != null
+    }
+
+    fun startSignUpFragment()  //minute 12  https://www.youtube.com/watch?v=XWH0WainC1Y
+    {
+        fragmentTransaction2?.commit()
+    }
+
+    fun setFragmentTransaction(fragmentTransaction2: FragmentTransaction?) {
+
+        this.fragmentTransaction2 = fragmentTransaction2
     }
 
 
