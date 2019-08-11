@@ -13,12 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
+import com.mobileapps.bhhslux.views.fragments.sortby.SortByFragment
+import com.mobileapps.bhhslux.views.fragments.sortby.SortByViewModel
 
 class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 
 
     private lateinit var recyclerView:RecyclerView
     private lateinit var showHousesAdapter: ShowHousesAdapter
+    private val sortByiewModel by lazy {
+        ViewModelProviders.of(activity!!).get(SortByViewModel::class.java)
+    }
+
+
+
 
     companion object {
         fun newInstance(filter : SearchFilter) = ShowHousesFragment(filter)
@@ -31,6 +39,15 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.show_houses_fragment, container, false)
     }
+
+    private fun startSortByViewFragment()
+    {
+        val sortByFragment = SortByFragment.newInstance()
+        val fragmentManager = activity?.supportFragmentManager
+        sortByFragment.show(fragmentManager, "sort_fragment")
+
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

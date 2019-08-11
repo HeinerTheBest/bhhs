@@ -109,7 +109,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun showSortDialog() {
-        val sortFragment = SortByFragment()
+        val sortFragment = SortByFragment.newInstance()
         sortFragment.show(supportFragmentManager, "sort_fragment")
     }
 
