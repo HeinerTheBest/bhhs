@@ -65,7 +65,7 @@
         style="@style/Text"
         app:layout_constraintBottom_toTopOf="@id/tvHouseAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@{showHousesModel.status}"
+        android:text="@{showHousesModel.searchType}"
         android:background="@color/appBackGround"
         />
 

@@ -1,20 +1,21 @@
 package com.mobileapps.bhhslux.model.house
 
-class House
-{
-    var id    =            ""
-    var price =            ""
-    var address =          ""
-    var status =           ""
-    var shortDescription = ""
-    var imagePatch       = ""
+class House(
 
-    constructor(id: String, price: String, address: String, status: String, shortDescription: String, imagePatch : String) {
-        this.id = id
-        this.price = price
-        this.address = address
-        this.status = status
-        this.shortDescription = shortDescription
-        this.imagePatch = imagePatch
-    }
-}
+    var id               : String  = "",
+    var price            : String  = "",
+    var oldPrice         : String? = null,
+    var address          : String  = "", // Change to object address
+    var shortDescription : String  = "",
+    var imagePatch       : String  = "",
+    var searchType       : String  = "For Sale",   // Can be  (For Sale) (For Rent) (Recently Sold)
+    var isNewToMarket    : Boolean = false,
+    var isOpenHouse      : Boolean = false,
+    var isActive         : Boolean = false
+
+)
+
+
+
+//Properties can be
+//

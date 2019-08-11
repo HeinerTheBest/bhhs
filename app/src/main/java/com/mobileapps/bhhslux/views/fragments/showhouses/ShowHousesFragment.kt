@@ -40,15 +40,6 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
         return inflater.inflate(R.layout.show_houses_fragment, container, false)
     }
 
-    private fun startSortByViewFragment()
-    {
-        val sortByFragment = SortByFragment.newInstance()
-        val fragmentManager = activity?.supportFragmentManager
-        sortByFragment.show(fragmentManager, "sort_fragment")
-
-    }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvShowHouses) as RecyclerView
@@ -65,6 +56,14 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
             recyclerView.layoutManager = LinearLayoutManager(this@ShowHousesFragment.context)
             recyclerView.adapter = showHousesAdapter
         })
+
+    }
+
+    private fun startSortByViewFragment()
+    {
+        val sortByFragment = SortByFragment.newInstance()
+        val fragmentManager = activity?.supportFragmentManager
+        sortByFragment.show(fragmentManager, "sort_fragment")
 
     }
 
