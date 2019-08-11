@@ -60,6 +60,11 @@ class ShowHousesViewModel : ViewModel
         return imagePatch
     }
 
+    fun startDetails()
+    {
+        Log.d("Heiner", "This house is price $price")
+    }
+
 
     fun getHousesList(filter: SearchFilter) : MutableLiveData<ArrayList<ShowHousesViewModel>>
     {

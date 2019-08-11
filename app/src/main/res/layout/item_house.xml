@@ -35,6 +35,8 @@
         app:layout_constraintTop_toTopOf="@id/tvDescription"
         android:background="@color/colorTransparentBlack"
         android:layout_width="match_parent"
+        android:onClick="@{(view) -> showHousesModel.startDetails()}"
+
         android:layout_height="wrap_content"/>
 
 
