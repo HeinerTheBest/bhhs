@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.housesdetail.HousesDetailFragment">
+
+    <include
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/fragment_head_mapa"/>
+
+    <LinearLayout
+        android:id="@+id/lyNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="Example of navigation 1 of 100"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/lyNavigation"
+        app:layout_constraintBottom_toTopOf="@id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <ImageView
+                android:id="@+id/imgShowPicture"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/housedemo" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/imgBed"
+                app:layout_constraintBottom_toBottomOf="@id/tvBedNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvBedNumber"
+                android:layout_margin="8dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                tools:text="$279900"
+                />
+
+            <ImageView
+                android:id="@+id/imgBed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorGray"
+                android:src="@drawable/bed"
+                app:layout_constraintTop_toBottomOf="@id/imgShowPicture"
+                app:layout_constraintEnd_toStartOf="@id/v1"
+                android:layout_margin="16dp"
+                />
+
+            <TextView
+                android:id="@+id/tvBedNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintTop_toBottomOf="@id/imgBed"
+                app:layout_constraintEnd_toEndOf="@id/imgBed"
+                app:layout_constraintStart_toStartOf="@id/imgBed"
+                tools:text="3"
+                />
+
+            <TextView
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toStartOf="@id/imgBath"
+                app:layout_constraintTop_toTopOf="@id/imgBath"
+                app:layout_constraintBottom_toBottomOf="@id/tvBathNumber"
+                android:id="@+id/v1"
+                android:background="@color/colorGray"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/imgBath"
+                app:layout_constraintTop_toBottomOf="@id/imgShowPicture"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorGray"
+                android:src="@drawable/bath"
+                />
+
+            <TextView
+                android:id="@+id/tvBathNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imgBath"
+                app:layout_constraintEnd_toEndOf="@id/imgBath"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintStart_toStartOf="@id/imgBath"
+                tools:text="3"
+                />
+
+            <TextView
+                android:id="@+id/tvHouseAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="598 Monmouth Court SW"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="16dp"
+                />
+
+            <TextView
+                android:id="@+id/ListingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvHouseAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_margin="8dp"
+                android:text="@string/listing_details"
+                />
+
+            <TextView
+                android:id="@+id/tvTypeTitle"
+                app:layout_constraintTop_toBottomOf="@id/ListingTitle"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                android:text="@string/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                android:layout_marginStart="25dp"
+                app:layout_constraintTop_toBottomOf="@id/ListingTitle"
+                android:textColor="@color/colorBlack"
+                tools:text="Single Family Residence"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvTypeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line1"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvStatusTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/status"
+                app:layout_constraintBottom_toTopOf="@id/line2"
+                app:layout_constraintTop_toTopOf="@+id/line1"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line2"
+                app:layout_constraintTop_toTopOf="@+id/line1"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="For Sale - Active"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvStatusTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line2"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvSubDivisionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/sub_division"
+                app:layout_constraintBottom_toTopOf="@id/line3"
+                app:layout_constraintTop_toTopOf="@+id/line2"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvSubDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line3"
+                app:layout_constraintTop_toTopOf="@+id/line2"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Dunleith"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvSubDivisionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line3"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/tvCountyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/county"
+                app:layout_constraintBottom_toTopOf="@id/line4"
+                app:layout_constraintTop_toTopOf="@+id/line3"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvCounty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line4"
+                app:layout_constraintTop_toTopOf="@+id/line3"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Cobb"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvCountyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line4"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/fragment_botton"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

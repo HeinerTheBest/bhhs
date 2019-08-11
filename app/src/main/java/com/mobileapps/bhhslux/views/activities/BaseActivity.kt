@@ -15,18 +15,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import androidx.viewpager.widget.PagerAdapter
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.accessibility.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.contact.ContactFragment
-import com.mobileapps.bhhslux.views.fragments.login.LoginFragment
+import com.mobileapps.bhhslux.views.fragments.auth.login.LoginFragment
 import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesFragment
 import com.mobileapps.bhhslux.views.fragments.sortby.SortByFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
-import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 

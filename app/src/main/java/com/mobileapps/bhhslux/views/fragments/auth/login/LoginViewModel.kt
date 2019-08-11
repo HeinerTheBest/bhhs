@@ -1,6 +1,5 @@
-package com.mobileapps.bhhslux.views.fragments.login
+package com.mobileapps.bhhslux.views.fragments.auth.login
 
-import android.app.Activity
 import android.text.Editable
 import android.util.Log
 import android.view.View
@@ -14,9 +13,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.user.User
-import com.mobileapps.bhhslux.views.fragments.signup.SignUpFragment
 
 class LoginViewModel() : ViewModel(), Observable {
 

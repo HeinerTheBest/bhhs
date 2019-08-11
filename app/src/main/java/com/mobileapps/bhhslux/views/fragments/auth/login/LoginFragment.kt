@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments.login
+package com.mobileapps.bhhslux.views.fragments.auth.login
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.databinding.LoginFragmentBinding
-import com.mobileapps.bhhslux.views.fragments.signup.SignUpFragment
+import com.mobileapps.bhhslux.views.fragments.auth.signup.SignUpFragment
 
 class LoginFragment : Fragment() {
 

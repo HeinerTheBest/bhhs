@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments.signup
+package com.mobileapps.bhhslux.views.fragments.auth.signup
 
 import androidx.lifecycle.ViewModel;
 

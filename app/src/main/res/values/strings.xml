@@ -74,6 +74,11 @@
     <string name="version_register">SSO 1.1</string>
     <string name="new_to_market">New to Market</string>
     <string name="open_house">Open House</string>
+    <string name="listing_details">Listing Details</string>
+    <string name="type">Type</string>
+    <string name="status">Status</string>
+    <string name="sub_division">Sub Division</string>
+    <string name="county">County</string>
 
 
 </resources>

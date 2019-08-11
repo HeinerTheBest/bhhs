@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.mobileapps.bhhslux.views.fragments.login.LoginViewModel" />
+            type="com.mobileapps.bhhslux.views.fragments.auth.login.LoginViewModel" />
     </data>
 
 
