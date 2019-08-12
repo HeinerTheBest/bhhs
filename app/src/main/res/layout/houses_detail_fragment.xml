@@ -636,7 +636,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorGray"
                 />
-            
+
             <TextView
                 android:id="@+id/tvListingProvidedCourtesyOfTitle"
                 android:layout_width="wrap_content"
