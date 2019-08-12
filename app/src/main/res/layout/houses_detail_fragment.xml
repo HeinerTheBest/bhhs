@@ -30,24 +30,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         layout="@layout/fragment_head_mapa"/>
 
-    <LinearLayout
-        android:id="@+id/lyNavigation"
-        app:layout_constraintTop_toBottomOf="@+id/top"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Example of navigation 1 of 100"
-            />
-
-    </LinearLayout>
 
     <ScrollView
-        app:layout_constraintTop_toBottomOf="@+id/lyNavigation"
+        app:layout_constraintTop_toBottomOf="@+id/top"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         android:layout_width="match_parent"
         android:layout_height="0dp">
@@ -63,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/housedemo"
+                android:src="@{viewModel.imagePatch}"
                 android:contentDescription="@string/picture_of_the_house" />
 
             <TextView
