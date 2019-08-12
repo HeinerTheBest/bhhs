@@ -43,8 +43,6 @@ class TopFiveHousesHolderFragment : Fragment() {
                 Picasso.with(context).load(houses[i].imagePatch).placeholder(R.drawable.housedemo).into(rootView.imgPicture)
             }
         }
-
-
         return rootView
     }
 
