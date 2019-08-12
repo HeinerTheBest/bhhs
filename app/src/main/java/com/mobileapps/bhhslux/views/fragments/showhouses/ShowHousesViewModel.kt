@@ -76,8 +76,6 @@ class ShowHousesViewModel : ViewModel
         fragmentTransaction2?.replace(R.id.fragmentLayout,detailHouseFragment)
         fragmentTransaction2?.commit()
         if(fragmentTransaction2 == null) Log.d("Heiner","Yes") else Log.d("Heiner","No")
-
-
     }
 
 
