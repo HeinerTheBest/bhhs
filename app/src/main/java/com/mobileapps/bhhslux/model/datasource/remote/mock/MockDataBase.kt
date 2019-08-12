@@ -27,6 +27,11 @@ class MockDataBase
         return listHouses
     }
 
+    fun getHouseById(i : Int) : House?
+    {
+        for (house in getAllHouses()) if (house.id.toInt() == i) return house
+        return  null
+    }
 
     fun getHouses(i : Int) : ArrayList<House> {
         val houses = getAllHouses()
