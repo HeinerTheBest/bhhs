@@ -19,6 +19,7 @@ import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.accessibility.AccessibilityFragment
+import com.mobileapps.bhhslux.views.fragments.advancedsearch.AdvancedSearchFragment
 import com.mobileapps.bhhslux.views.fragments.contact.ContactFragment
 import com.mobileapps.bhhslux.views.fragments.auth.login.LoginFragment
 import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesFragment
@@ -145,7 +146,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_advanced_search -> {
-
+                val advancedSearch = AdvancedSearchFragment.newInstance()
+                replaceFragment(advancedSearch)
             }
             R.id.nav_find_agent_office -> {
 
@@ -154,7 +156,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 //todo validate if the user is logging
             }
             R.id.nav_saved_searches -> {
-
+                //todo validate if the user is logging
             }
             R.id.nav_share -> {
                 shareLinkPlayStore()
