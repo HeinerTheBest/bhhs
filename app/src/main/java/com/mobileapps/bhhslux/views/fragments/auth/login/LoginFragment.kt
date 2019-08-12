@@ -27,9 +27,7 @@ class LoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-
     }
-
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

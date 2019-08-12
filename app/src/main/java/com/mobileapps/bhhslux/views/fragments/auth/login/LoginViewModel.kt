@@ -43,7 +43,6 @@ class LoginViewModel() : ViewModel(), Observable {
 
 
 
-
     val currentUser : MutableLiveData<User> = MutableLiveData()
 
 

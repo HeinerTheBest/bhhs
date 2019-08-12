@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
+import com.mobileapps.bhhslux.views.fragments.auth.signup.SignUpFragment
+import com.mobileapps.bhhslux.views.fragments.housesdetail.HousesDetailFragment
 import com.mobileapps.bhhslux.views.fragments.sortby.SortByViewModel
 
 class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
@@ -20,6 +22,7 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 
     private lateinit var recyclerView:RecyclerView
     private lateinit var showHousesAdapter: ShowHousesAdapter
+
     private val sortByiewModel by lazy {
         ViewModelProviders.of(activity!!).get(SortByViewModel::class.java)
     }
@@ -33,6 +36,12 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
     }
 
     private lateinit var viewModel: ShowHousesViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -48,9 +57,14 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ShowHousesViewModel::class.java)
 
-        viewModel.getHousesList(filter).observe(this, Observer
+
+        val detailHouseFragment = HousesDetailFragment.newInstance()
+        val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+        fragmentTransaction?.replace(R.id.fragmentLayout,detailHouseFragment)
+        fragmentTransaction?.addToBackStack(null)
+
+        viewModel.getHousesList(filter,fragmentTransaction).observe(this, Observer
         {
             showHousesViewModel ->
             showHousesAdapter = ShowHousesAdapter(this@ShowHousesFragment.context,showHousesViewModel!!)
@@ -58,7 +72,11 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
             recyclerView.adapter = showHousesAdapter
         })
 
+
+
     }
+
+
 
 
 

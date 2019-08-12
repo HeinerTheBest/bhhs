@@ -1,5 +1,6 @@
 package com.mobileapps.bhhslux.model.datasource.remote.mock
 
+import androidx.fragment.app.FragmentTransaction
 import com.mobileapps.bhhslux.model.house.House
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel
@@ -40,14 +41,14 @@ class MockDataBase
     }
 
 
-    fun getFilterHousesByFilter(filter : SearchFilter): ArrayList<ShowHousesViewModel> {
+    fun getFilterHousesByFilter(filter : SearchFilter, fragmentTransaction2 : FragmentTransaction?): ArrayList<ShowHousesViewModel> {
         val houses = getAllHouses()
         val arrayListToReturn = ArrayList<ShowHousesViewModel>()
 
         for (house in houses)
         {
             if(validateHouseWithFilter(house,filter))
-                arrayListToReturn.add(ShowHousesViewModel(house))
+                arrayListToReturn.add(ShowHousesViewModel(house,fragmentTransaction2))
         }
         return arrayListToReturn
     }
