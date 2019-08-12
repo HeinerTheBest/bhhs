@@ -14,5 +14,17 @@ class House(
     var isActive         : Boolean = false,
     var listingDetails   : ListingDetails = ListingDetails()
 
+
 )
+{
+
+    fun getStatus() : String
+    {
+        var statusToReturn = searchType
+        statusToReturn = if(isActive) "$statusToReturn - Active" else "$statusToReturn - Pending"
+        return statusToReturn
+    }
+
+
+}
 

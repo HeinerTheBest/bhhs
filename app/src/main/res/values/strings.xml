@@ -93,7 +93,7 @@
     <string name="lot_size">Lot Size</string>
     <string name="taxes_year">Taxes/Year</string>
     <string name="listing_id">Listing Id</string>
-    <string name="listing_povided_n_courtesy_of">Listing Povided   Courtesy Of</string>
+    <string name="listing_povided_n_courtesy_of">Listing Povided \n  Courtesy Of</string>
 
 
 </resources>
