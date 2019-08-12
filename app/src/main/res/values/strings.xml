@@ -79,6 +79,21 @@
     <string name="status">Status</string>
     <string name="sub_division">Sub Division</string>
     <string name="county">County</string>
+    <string name="year_built">Year Built</string>
+    <string name="bath_icon">bath icon</string>
+    <string name="bed_icon">bed icon</string>
+    <string name="picture_of_the_house">Picture of the house</string>
+    <string name="high_school">High School</string>
+    <string name="middle_school">Middle School</string>
+    <string name="elementary_school">Elementary School</string>
+    <string name="beds">Beds</string>
+    <string name="full_baths">Full Baths</string>
+    <string name="half_baths">Half Baths</string>
+    <string name="sq_ft">Sq. Ft.</string>
+    <string name="lot_size">Lot Size</string>
+    <string name="taxes_year">Taxes/Year</string>
+    <string name="listing_id">Listing Id</string>
+    <string name="listing_povided_n_courtesy_of">Listing Povided   Courtesy Of</string>
 
 
 </resources>

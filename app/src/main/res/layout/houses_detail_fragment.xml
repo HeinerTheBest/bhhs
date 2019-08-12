@@ -49,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/housedemo" />
+                android:src="@drawable/housedemo"
+                android:contentDescription="@string/picture_of_the_house" />
 
             <TextView
                 android:id="@+id/tvPrice"
@@ -75,7 +76,7 @@
                 app:layout_constraintTop_toBottomOf="@id/imgShowPicture"
                 app:layout_constraintEnd_toStartOf="@id/v1"
                 android:layout_margin="16dp"
-                />
+                android:contentDescription="@string/bed_icon" />
 
             <TextView
                 android:id="@+id/tvBedNumber"
@@ -109,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:tint="@color/colorGray"
                 android:src="@drawable/bath"
-                />
+                android:contentDescription="@string/bath_icon" />
 
             <TextView
                 android:id="@+id/tvBathNumber"
@@ -129,8 +130,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvPrice"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
                 tools:text="598 Monmouth Court SW"
-                android:textColor="@color/colorBlack"
                 android:layout_margin="16dp"
                 />
 
@@ -240,12 +241,6 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorGray"
                 />
-
-
-
-
-
-
             <TextView
                 android:id="@+id/tvCountyTitle"
                 android:layout_width="wrap_content"
@@ -256,7 +251,6 @@
                 app:layout_constraintTop_toTopOf="@+id/line3"
                 app:layout_constraintStart_toStartOf="@id/ListingTitle"
                 />
-
             <TextView
                 android:id="@+id/tvCounty"
                 android:layout_width="wrap_content"
@@ -279,12 +273,406 @@
                 android:background="@color/colorGray"
                 />
 
+            <TextView
+                android:id="@+id/tvYearBuiltTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/year_built"
+                app:layout_constraintBottom_toTopOf="@id/line5"
+                app:layout_constraintTop_toTopOf="@+id/line4"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
 
+            <TextView
+                android:id="@+id/tvYearBuilt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line5"
+                app:layout_constraintTop_toTopOf="@+id/line4"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="1989"
+                />
 
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvYearBuiltTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line5"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
 
+            <TextView
+                android:id="@+id/tvHighSchoolTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/high_school"
+                app:layout_constraintBottom_toTopOf="@id/line6"
+                app:layout_constraintTop_toTopOf="@+id/line5"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
 
+            <TextView
+                android:id="@+id/tvHighSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line6"
+                app:layout_constraintTop_toTopOf="@+id/line5"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Brunswick High School"
+                />
 
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvHighSchoolTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line6"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvMiddleSchoolTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/middle_school"
+                app:layout_constraintBottom_toTopOf="@id/line7"
+                app:layout_constraintTop_toTopOf="@+id/line6"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvMiddleSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line7"
+                app:layout_constraintTop_toTopOf="@+id/line6"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Marietta"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvMiddleSchoolTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line7"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvElementarySchoolTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:text="@string/elementary_school"
+                app:layout_constraintBottom_toTopOf="@id/line8"
+                app:layout_constraintTop_toTopOf="@+id/line7"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvElementarySchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line8"
+                app:layout_constraintTop_toTopOf="@+id/line7"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Marietta"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvElementarySchoolTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line8"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvBedsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/beds"
+                app:layout_constraintBottom_toTopOf="@id/line9"
+                app:layout_constraintTop_toTopOf="@+id/line8"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvBeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line9"
+                app:layout_constraintTop_toTopOf="@+id/line8"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="4"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvBedsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line9"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvFullBathsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/full_baths"
+                app:layout_constraintBottom_toTopOf="@id/line10"
+                app:layout_constraintTop_toTopOf="@+id/line9"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvFullBaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line10"
+                app:layout_constraintTop_toTopOf="@+id/line9"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="2"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvFullBathsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line10"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvHalfBathsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/half_baths"
+                app:layout_constraintBottom_toTopOf="@id/line11"
+                app:layout_constraintTop_toTopOf="@+id/line10"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvHalfBaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line11"
+                app:layout_constraintTop_toTopOf="@+id/line10"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="1"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvHalfBathsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line11"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvSqFtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/sq_ft"
+                app:layout_constraintBottom_toTopOf="@id/line12"
+                app:layout_constraintTop_toTopOf="@+id/line11"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvSqFt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line12"
+                app:layout_constraintTop_toTopOf="@+id/line11"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="2,180"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvSqFtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line12"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvLotSizeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/lot_size"
+                app:layout_constraintBottom_toTopOf="@id/line13"
+                app:layout_constraintTop_toTopOf="@+id/line12"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvLotSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line13"
+                app:layout_constraintTop_toTopOf="@+id/line12"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="0.38 acres"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvLotSizeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line13"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvTaxesYearTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/taxes_year"
+                app:layout_constraintBottom_toTopOf="@id/line14"
+                app:layout_constraintTop_toTopOf="@+id/line13"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvTaxesYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line14"
+                app:layout_constraintTop_toTopOf="@+id/line13"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="$336/2018"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvTaxesYearTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line14"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+            <TextView
+                android:id="@+id/tvListingIdTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/listing_id"
+                app:layout_constraintBottom_toTopOf="@id/line15"
+                app:layout_constraintTop_toTopOf="@+id/line14"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvListingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line15"
+                app:layout_constraintTop_toTopOf="@+id/line14"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="6549063"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvListingIdTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line15"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
             
+            <TextView
+                android:id="@+id/tvListingProvidedCourtesyOfTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/listing_povided_n_courtesy_of"
+                app:layout_constraintBottom_toTopOf="@id/line16"
+                app:layout_constraintTop_toTopOf="@+id/line15"
+                app:layout_constraintStart_toStartOf="@id/ListingTitle"
+                />
+
+            <TextView
+                android:id="@+id/tvListingProvidedCourtesyOf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/line16"
+                app:layout_constraintTop_toTopOf="@+id/line15"
+                app:layout_constraintStart_toEndOf="@id/ListingTitle"
+                tools:text="Georgia Elite Realty Atlant, LLC."
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvListingProvidedCourtesyOfTitle"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line16"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGray"
+                />
+
+
+
+
 
 
 
