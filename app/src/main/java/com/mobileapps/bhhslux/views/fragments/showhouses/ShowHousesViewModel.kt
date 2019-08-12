@@ -11,6 +11,7 @@ import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.model.datasource.remote.mock.MockDataBase
 import com.mobileapps.bhhslux.model.house.House
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
+import com.mobileapps.bhhslux.views.fragments.housesdetail.HousesDetailFragment
 import com.squareup.picasso.Picasso
 
 class ShowHousesViewModel : ViewModel
@@ -71,6 +72,8 @@ class ShowHousesViewModel : ViewModel
     fun startDetails()
     {
         Log.d("Heiner", "This house is price $price")
+        val detailHouseFragment = HousesDetailFragment.newInstance(id.toInt())
+        fragmentTransaction2?.replace(R.id.fragmentLayout,detailHouseFragment)
         fragmentTransaction2?.commit()
         if(fragmentTransaction2 == null) Log.d("Heiner","Yes") else Log.d("Heiner","No")
 

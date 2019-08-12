@@ -8,11 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.model.house.House
 
 class HousesDetailFragment : Fragment() {
 
     companion object {
-        fun newInstance() = HousesDetailFragment()
+        fun newInstance(id : Int) = HousesDetailFragment()
     }
 
     private lateinit var viewModel: HousesDetailViewModel

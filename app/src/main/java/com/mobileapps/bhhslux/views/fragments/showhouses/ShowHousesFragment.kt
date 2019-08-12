@@ -59,9 +59,7 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
-        val detailHouseFragment = HousesDetailFragment.newInstance()
         val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
-        fragmentTransaction?.replace(R.id.fragmentLayout,detailHouseFragment)
         fragmentTransaction?.addToBackStack(null)
 
         viewModel.getHousesList(filter,fragmentTransaction).observe(this, Observer
