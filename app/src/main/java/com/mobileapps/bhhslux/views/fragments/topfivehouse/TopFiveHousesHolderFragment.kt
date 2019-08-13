@@ -37,7 +37,7 @@ class TopFiveHousesHolderFragment : Fragment() {
                 rootView.tvIndex.text = indexText
                 Picasso.with(context).load(houses[i].imagePatch).placeholder(R.drawable.housedemo).into(rootView.imgPicture)
 
-                rootView.setOnClickListener {
+                rootView.lyBottom.setOnClickListener {
                     val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
                     fragmentTransaction?.addToBackStack(null)
                     val detailHouseFragment = HousesDetailFragment.newInstance(houses[i].id.toInt())
