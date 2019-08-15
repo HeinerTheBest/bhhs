@@ -59,6 +59,8 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 
+
+
         val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
         fragmentTransaction?.addToBackStack(null)
 
