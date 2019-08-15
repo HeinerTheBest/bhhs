@@ -38,7 +38,7 @@
         app:layout_constraintStart_toEndOf="@id/imgIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imgMap"
+        app:layout_constraintEnd_toStartOf="@id/btnMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextTitle"
@@ -46,7 +46,7 @@
         />
 
     <ImageView
-        android:id="@+id/imgMap"
+        android:id="@+id/btnMap"
         app:layout_constraintStart_toEndOf="@id/tvTitle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_margin="5dp"
+        android:onClick="onClick"
         app:srcCompat="@drawable/place"
         android:contentDescription="@string/open_map" />
 

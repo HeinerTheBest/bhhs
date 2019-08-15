@@ -99,7 +99,13 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.btnEmailToSee   ->  sendHelpEmail() //Todo can do better
 
             R.id.btnSort         ->  showSortDialog()
+
+            R.id.btnMap          -> openMap()
         }
+    }
+
+    private fun openMap() {
+        Log.d("Heiner","Opening map")
     }
 
     fun closeFragment()
