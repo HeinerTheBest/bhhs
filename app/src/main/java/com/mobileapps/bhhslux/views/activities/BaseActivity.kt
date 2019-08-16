@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
+import com.mobileapps.bhhslux.views.fragments.MapFragment
 import com.mobileapps.bhhslux.views.fragments.accessibility.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.advancedsearch.AdvancedSearchFragment
 import com.mobileapps.bhhslux.views.fragments.contact.ContactFragment
@@ -107,6 +108,11 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun openMap() {
         Log.d("Heiner","Opening map ${searchFilter.nearbyForRent} ${searchFilter.nearbyForSale}")
+        //val mapFragment = MapFragment.newInstance()
+        //replaceFragment(mapFragment)
+        val map = Intent(this,MapsActivity::class.java)
+        startActivity(map)
+
     }
 
     fun closeFragment()

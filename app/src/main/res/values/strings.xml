@@ -94,6 +94,7 @@
     <string name="taxes_year">Taxes/Year</string>
     <string name="listing_id">Listing Id</string>
     <string name="listing_povided_n_courtesy_of">Listing Povided \n  Courtesy Of</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
