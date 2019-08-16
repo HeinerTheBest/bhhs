@@ -110,7 +110,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun openMap() {
         Log.d("Heiner","Opening map ${searchFilter.nearbyForRent} ${searchFilter.nearbyForSale}")
-        val mapFragment = MapFragment.newInstance()
+        val mapFragment = MapFragment.newInstance(searchFilter)
         replaceFragment(mapFragment)
         /*val map = Intent(this,MapsActivity::class.java)
         startActivity(map)*/
