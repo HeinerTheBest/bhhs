@@ -106,16 +106,19 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.btnMap          -> openMap()
 
             R.id.btnRecycler    ->  closeFragment()
+
+            R.id.btnRefine      -> openAdvanceSearch()
         }
     }
 
+    private fun openAdvanceSearch() {
+        val advancedSearch = AdvancedSearchFragment.newInstance()
+        replaceFragment(advancedSearch)
+    }
+
     private fun openMap() {
-        Log.d("Heiner","Opening map ${searchFilter.nearbyForRent} ${searchFilter.nearbyForSale}")
         val mapFragment = MapFragment.newInstance(searchFilter)
         replaceFragment(mapFragment)
-        /*val map = Intent(this,MapsActivity::class.java)
-        startActivity(map)*/
-
     }
 
     fun closeFragment()
@@ -168,8 +171,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_advanced_search -> {
-                val advancedSearch = AdvancedSearchFragment.newInstance()
-                replaceFragment(advancedSearch)
+                openAdvanceSearch()
             }
             R.id.nav_find_agent_office -> {
 
