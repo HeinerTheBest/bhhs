@@ -1,4 +1,4 @@
-package com.mobileapps.bhhslux.views.fragments
+package com.mobileapps.bhhslux.views.fragments.map
 
 import androidx.lifecycle.ViewModel;
 

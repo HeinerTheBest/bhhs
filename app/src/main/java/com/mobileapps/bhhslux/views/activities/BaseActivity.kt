@@ -15,11 +15,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.gms.maps.SupportMapFragment
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.MapFragment
+import com.mobileapps.bhhslux.views.fragments.map.MapFragment
 import com.mobileapps.bhhslux.views.fragments.accessibility.AccessibilityFragment
 import com.mobileapps.bhhslux.views.fragments.advancedsearch.AdvancedSearchFragment
 import com.mobileapps.bhhslux.views.fragments.contact.ContactFragment
@@ -105,6 +104,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.btnSort         ->  showSortDialog()
 
             R.id.btnMap          -> openMap()
+
+            R.id.btnRecycler    ->  closeFragment()
         }
     }
 
