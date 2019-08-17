@@ -38,27 +38,13 @@
         app:layout_constraintStart_toEndOf="@id/imgIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextTitle"
         android:text="@string/georgia_properties"
         />
 
-    <ImageView
-        android:id="@+id/btnRecycler"
-        app:layout_constraintStart_toEndOf="@id/tvTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:onClick="onClick"
-        android:tint="@color/colorWhite"
-        app:srcCompat="@drawable/document"
-        android:contentDescription="@string/open_map" />
 
     <View
         android:layout_width="match_parent"

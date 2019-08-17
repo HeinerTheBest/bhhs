@@ -114,8 +114,6 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.btnMap          -> openMap()
 
-            R.id.btnRecycler    ->  closeFragment()
-
             R.id.btnRefine      -> openAdvanceSearch()
 
             R.id.btnSearch      -> openMapInThisLocation()
