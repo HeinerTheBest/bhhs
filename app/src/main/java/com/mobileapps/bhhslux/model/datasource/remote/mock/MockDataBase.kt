@@ -2,6 +2,7 @@ package com.mobileapps.bhhslux.model.datasource.remote.mock
 
 import android.util.Log
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.database.*
 import com.mobileapps.bhhslux.model.house.House
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
@@ -31,57 +32,36 @@ class MockDataBase
 
 
 
+/*
 
-        //TO add to the data Base
-        //database.child("houses").child("2").setValue(House("1", 1350  , null      ,"1815 The Exchange SE, Atlanta, GA 30339"                 , LatLng(33.909243,-84.4803857), "4bd 3 ba", "https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg"                                                             ,"For Sale"     ,true ,true  ,true))
-
-        /*val availableHouses: List<House> = mutableListOf(
-                House("11",436000, null      ,"1651 Massachusetts St SW, Marietta, GA 30008"            , LatLng(33.9128652,-84.5723727), "2bd 1 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true),
-                House("10",399900, 550200    ,"2475 Windy Hill Rd SE, Marietta, GA 30067"               , LatLng(33.9061354,-84.4819092), "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg","For Sale"     ,false,true  ,false)
-
+        val availableHouses: List<House> = mutableListOf(
+                        House("1", 1350  , null      ,"1815 The Exchange SE, Atlanta, GA 30339"                 , 33.909243,-84.4803857, "4bd 3 ba" , "https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg"                                                             ,"For Sale"     ,true ,true  ,true),
+                        House("2", 399900, 450000    ,"1849 The Exchange SE # 200, Atlanta, GA 30339"           , 33.9090115,-84.4801926, "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg","For Sale"     ,false,true  ,false),
+                        House("3", 310000, null      ,"1820 The Exchange SE, Atlanta, GA 30339"                 , 33.9075434,-84.4821763, "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true),
+                        House("4", 295775, null      ,"1770 The Exchange SE Suite 200, Atlanta, GA 30339"       , 33.9075434,-84.4821763, "4bd 3 ba", "https://upload.wikimedia.org/wikipedia/commons/d/d8/SaltBoxHouse1.jpg"                                            ,"Recently Sold",false,false ,false),
+                        House("5", 399900, 470000    ,"1775 The Exchange SE #200, Atlanta, GA 30339"            , 33.9082112,-84.481082, "3bd 2 ba" , "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1","For Sale"     ,false,true  ,false),
+                        House("6", 310000, null      ,"1755 The Exchange SE #204, Atlanta, GA 30339"            , 33.9093587,-84.4819307, "4bd 3 ba", "https://static.dezeen.com/uploads/2017/08/clifton-house-project-architecture_dezeen_hero-1.jpg"                                                      ,"For Rent"     ,true ,false ,true),
+                        House("7", 295775, null      ,"1760 The Exchange SE, Atlanta, GA 30339"                 , 33.9093587,-84.4819307, "4bd 3 ba", "https://freshome.com/wp-content/uploads/2018/09/contemporary-exterior.jpg"                                            ,"Recently Sold",false,false ,false),
+                        House("8", 310000, null      ,"1995 N Park Pl SE # 425, Atlanta, GA 30339"              , 33.9061354,-84.4819092, "4bd 3 ba", "https://indaily.com.au/wp-content/uploads/2019/04/Screen-Shot-2019-04-12-at-8.04.06-am-850x455.png"                                                      ,"For Rent"     ,true ,false ,true),
+                        House("9", 295775, null      ,"2000 S Park Pl NW, Atlanta, GA 30339"                    , 33.9061354,-84.4819092, "4bd 3 ba", "https://amp.businessinsider.com/images/5d1b6f31a17d6c27a5698704-750-562.jpg"                                            ,"Recently Sold",false,false ,false),
+                        House("10",399900, 550200    ,"2475 Windy Hill Rd SE, Marietta, GA 30067"               , 33.9061354,-84.4819092, "3bd 2 ba", "https://www.eliteholidayhomes.com.au/wp-content/uploads/2018/08/banner2.jpg","For Sale"     ,false,true  ,false),
+                        House("11",436000, null      ,"1651 Massachusetts St SW, Marietta, GA 30008"            , 33.9128652,-84.5723727, "2bd 1 ba", "https://images.adsttc.com/media/images/59a4/c624/b22e/389d/3e00/02a3/newsletter/MHA.JR_201708_038.jpg?1503970808"                                                      ,"For Rent"     ,true ,false ,true)
         )
         availableHouses.forEach {
             database.child("houses").child(it.id).setValue(it)
-        }*/
-
-       // CREATING SALADS IN THE DB                                (**********************************
-      /*  val availableSalads: List<Salad> = mutableListOf(
-                Salad("Gherkin", "Fresh and delicious"),
-                Salad("Lettuce", "Easy to prepare"),
-                Salad("Tomato", "Boring but healthy"),
-                Salad("Zucchini", "Healthy and gross")
-        )
-        availableSalads.forEach {
-            val key = database.child("salads").push().key
-            it.uuid = key!!
-            database.child("salads").child(key).setValue(it)
-        }*/
-
-
-
-        //GETTING SALADS TO MENU FROM FIREBASE                    ******************************************
-        /* val menu: MutableList<Salad> = mutableListOf()
-
-        val menuListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                dataSnapshot.children.mapNotNullTo(menu) { it.getValue<Salad>(Salad::class.java) }
-                Log.d("Heiner","Adding $menu")
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("loadPost:onCancelled ${databaseError.toException()}")
-            }
-        }
-        database.child("salads").addListenerForSingleValueEvent(menuListener)
-
-        for (men in menu)
-        {
-            Log.d("Heiner","THe menu has ${men.name}\n")
         }
 
-        Log.d("Heiner","The ENd")*/
 
-        ////////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+
+
+
+
+        //              LISTOOOOOOOOOOOOOOOOO
+
+
 
         val menu: MutableList<House> = mutableListOf()
 
