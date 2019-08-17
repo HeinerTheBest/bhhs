@@ -17,6 +17,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         layout="@layout/fragment_head_advanced_search"/>
 
+    <TextView
+        android:id="@+id/tvSearchType"
+        android:text="@string/search_type"
+        app:layout_constraintTop_toBottomOf="@id/top"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerSearchType"
+        android:layout_width="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/listOfSearchType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvSearchType"
+        app:layout_constraintTop_toBottomOf="@id/top" />
+
+    <EditText
+        android:id="@+id/etLocation"
+        app:layout_constraintTop_toBottomOf="@id/tvSearchType"
+        android:background="@drawable/shape_default"
+        android:layout_margin="8dp"
+        android:hint="@string/address_city_and_state_zip"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom"
         app:layout_constraintBottom_toBottomOf="parent"
