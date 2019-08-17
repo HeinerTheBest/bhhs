@@ -3,10 +3,13 @@ package com.mobileapps.bhhslux.views.activities
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
@@ -15,6 +18,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.maps.model.LatLng
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
@@ -27,6 +31,9 @@ import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesFragment
 import com.mobileapps.bhhslux.views.fragments.sortby.SortByFragment
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.content_base.*
+import kotlinx.android.synthetic.main.fragment_head_nav.*
+import java.lang.Exception
+import java.lang.IllegalStateException
 
 class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,6 +43,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val CALL_REQUEST_CODE = 101
     private lateinit var viewModel: BaseActivityViewModel
     private var searchFilter = SearchFilter()
+    private var latLngToLook = LatLng(33.90957,-84.479215) //todo You location
+
 
 
 
@@ -108,6 +117,45 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.btnRecycler    ->  closeFragment()
 
             R.id.btnRefine      -> openAdvanceSearch()
+
+            R.id.btnSearch      -> openMapInThisLocation()
+        }
+    }
+
+    private fun openMapInThisLocation() {
+        if(etSearchHouses.text.isEmpty())
+        {
+            Toast.makeText(this,"You need to add a valid address",Toast.LENGTH_SHORT).show()
+        }
+        else
+        {
+            getLatLngBasedOfAddress(etSearchHouses.text.toString())?.let {
+                searchFilter = SearchFilter(all = true)
+                latLngToLook = it
+                etSearchHouses.text.clear()
+                drawer_layout.closeDrawers()
+                val mapFragment = MapFragment.newInstance(searchFilter, latLngToLook)
+                replaceFragment(mapFragment)
+            }
+        }
+    }
+
+
+
+
+
+    private fun getLatLngBasedOfAddress(address : String):LatLng?
+    {
+        val geoCoder = Geocoder(this)
+        return try {
+            val addressInfo = geoCoder.getFromLocationName(address,1)[0]
+            LatLng(addressInfo.latitude,addressInfo.longitude)
+        }
+        catch (e: Exception)
+        {
+            Toast.makeText(this,"You need to add a valid address",Toast.LENGTH_LONG).show()
+            Log.d("Heiner","NuUUUULLLL")
+            null
         }
     }
 
@@ -117,7 +165,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun openMap() {
-        val mapFragment = MapFragment.newInstance(searchFilter)
+        val mapFragment = MapFragment.newInstance(searchFilter,latLngToLook)
         replaceFragment(mapFragment)
     }
 

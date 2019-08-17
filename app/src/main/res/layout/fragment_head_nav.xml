@@ -80,6 +80,8 @@
         app:layout_constraintTop_toBottomOf="@id/tvSubSubTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnMicrophone"
+        android:onClick="onClick"
+        android:tint="@color/colorWhite"
         app:srcCompat="@drawable/search" />
 
     <ImageView

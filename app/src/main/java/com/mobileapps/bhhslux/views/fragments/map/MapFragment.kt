@@ -20,7 +20,7 @@ import com.mobileapps.bhhslux.model.house.House
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
 import com.mobileapps.bhhslux.views.fragments.housesdetail.HousesDetailFragment
 
-class MapFragment(private var filter: SearchFilter) : Fragment(), OnMapReadyCallback {
+class MapFragment(private var filter: SearchFilter, private var latLngToLook:LatLng) : Fragment(), OnMapReadyCallback {
 
 
 
@@ -38,8 +38,7 @@ class MapFragment(private var filter: SearchFilter) : Fragment(), OnMapReadyCall
         }
 
 
-        val macLatLng = LatLng(33.90957,-84.479215) //todo You location
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(macLatLng))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLngToLook))
         mMap.setMinZoomPreference(15.0f)
 
 
@@ -95,7 +94,7 @@ class MapFragment(private var filter: SearchFilter) : Fragment(), OnMapReadyCall
 
 
     companion object {
-        fun newInstance(filter: SearchFilter) = MapFragment(filter)
+        fun newInstance(filter: SearchFilter, latLngToLook : LatLng) = MapFragment(filter,latLngToLook)
     }
 
     private lateinit var viewModel: MapViewModel

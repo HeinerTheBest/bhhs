@@ -73,6 +73,9 @@ class MockDataBase
 
     private fun validateHouseWithFilter(house: House, filter: SearchFilter) : Boolean
     {
+        if (filter.all)
+            return true
+
         if (filter.justSearchType)
             return validateJustSearchType(house,filter)
 

@@ -8,5 +8,6 @@ class SearchFilter(
         var priceChanged       : Boolean = false,
         var openHouse          : Boolean = false,
         var nearbyForRent      : Boolean = false,
-        var nearbyRecentlySold : Boolean = false
+        var nearbyRecentlySold : Boolean = false,
+        var all                : Boolean = false
 )
