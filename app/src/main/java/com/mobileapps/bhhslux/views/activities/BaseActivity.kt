@@ -5,11 +5,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
+import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
@@ -18,6 +20,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.TopFiveAdapter
@@ -43,7 +47,8 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val CALL_REQUEST_CODE = 101
     private lateinit var viewModel: BaseActivityViewModel
     private var searchFilter = SearchFilter()
-    private var latLngToLook = LatLng(33.90957,-84.479215) //todo You location
+    private lateinit var latLngToLook : LatLng//todo You location
+    lateinit var fusedLocationClient: FusedLocationProviderClient
 
 
 
@@ -52,6 +57,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme) //Set The splash
         super.onCreate(savedInstanceState)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         setContentView(R.layout.activity_base)
         nav_view.setNavigationItemSelectedListener(this)
 
@@ -152,7 +158,6 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         catch (e: Exception)
         {
             Toast.makeText(this,"You need to add a valid address",Toast.LENGTH_LONG).show()
-            Log.d("Heiner","NuUUUULLLL")
             null
         }
     }
@@ -163,9 +168,62 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun openMap() {
-        val mapFragment = MapFragment.newInstance(searchFilter,latLngToLook)
-        replaceFragment(mapFragment)
+        if (checkPermission(
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION)) {
+            fusedLocationClient?.lastLocation?.
+                    addOnSuccessListener(this
+                    ) { location : Location? ->
+                        // Got last known location. In some rare
+                        // situations this can be null.
+                        if(location == null) {
+                            Log.d("Heiner","Location null")
+                            // TODO, handle it
+                        } else location.apply {
+                            // Handle location object
+                            latLngToLook = LatLng(location.latitude,location.longitude)
+                            val mapFragment = MapFragment.newInstance(searchFilter, latLngToLook)
+                            replaceFragment(mapFragment)
+                        }
+                    }
+        }
+        else
+        {
+            Log.d("Heiner","Not permision")
+        }
     }
+
+
+
+    val PERMISSION_ID = 42
+    private fun checkPermission(vararg perm:String) : Boolean {
+        val havePermissions = perm.toList().all {
+            ContextCompat.checkSelfPermission(this,it) ==
+                    PackageManager.PERMISSION_GRANTED
+        }
+        if (!havePermissions) {
+            if(perm.toList().any {
+                        ActivityCompat.
+                                shouldShowRequestPermissionRationale(this, it)}
+            ) {
+                val dialog = AlertDialog.Builder(this)
+                        .setTitle("Permission")
+                        .setMessage("Permission needed!")
+                        .setPositiveButton("OK") { _, _ ->
+                            ActivityCompat.requestPermissions(
+                                    this, perm, PERMISSION_ID)
+                        }
+                        .setNegativeButton("No") { _, _ -> }
+                        .create()
+                dialog.show()
+            } else {
+                ActivityCompat.requestPermissions(this, perm, PERMISSION_ID)
+            }
+            return false
+        }
+        return true
+    }
+
 
     fun closeFragment()
     {

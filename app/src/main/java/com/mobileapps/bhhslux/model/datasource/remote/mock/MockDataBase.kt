@@ -24,6 +24,7 @@ class MockDataBase
         listHouses.add(House("8", 310000, null      ,"1995 N Park Pl SE # 425, Atlanta, GA 30339"              , LatLng(33.9061354,-84.4819092), "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true))
         listHouses.add(House("9", 295775, null      ,"2000 S Park Pl NW, Atlanta, GA 30339"                    , LatLng(33.9061354,-84.4819092), "4bd 3 ba", "https://upload.wikimedia.org/wikipedia/commons/d/d8/SaltBoxHouse1.jpg"                                            ,"Recently Sold",false,false ,false))
         listHouses.add(House("10",399900, 550200    ,"2475 Windy Hill Rd SE, Marietta, GA 30067"               , LatLng(33.9061354,-84.4819092), "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg","For Sale"     ,false,true  ,false))
+        listHouses.add(House("11",436000, null      ,"1651 Massachusetts St SW, Marietta, GA 30008"            , LatLng(33.9128652,-84.5723727), "2bd 1 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true))
 
         return listHouses
     }
