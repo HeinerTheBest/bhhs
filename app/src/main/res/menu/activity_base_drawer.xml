@@ -35,18 +35,6 @@
             android:icon="@drawable/search"
             android:title="@string/menu_advanced_search" />
         <item
-            android:id="@+id/nav_find_agent_office"
-            android:icon="@drawable/find_agent_office"
-            android:title="@string/menu_find_agent_office" />
-        <item
-            android:id="@+id/nav_saved_properties"
-            android:icon="@drawable/saved_properties"
-            android:title="@string/menu_saved_properties" />
-        <item
-            android:id="@+id/nav_saved_searches"
-            android:icon="@drawable/saved_searches"
-            android:title="@string/menu_saved_searches" />
-        <item
             android:id="@+id/nav_share"
             android:icon="@drawable/share"
             android:title="@string/menu_share_app" />

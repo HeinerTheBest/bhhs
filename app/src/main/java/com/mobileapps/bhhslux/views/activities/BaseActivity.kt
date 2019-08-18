@@ -277,15 +277,6 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_advanced_search -> {
                 openAdvanceSearch()
             }
-            R.id.nav_find_agent_office -> {
-
-            }
-            R.id.nav_saved_properties -> {
-                //todo validate if the user is logging
-            }
-            R.id.nav_saved_searches -> {
-                //todo validate if the user is logging
-            }
             R.id.nav_share -> {
                 shareLinkPlayStore()
             }
