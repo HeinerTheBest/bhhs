@@ -171,7 +171,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (checkPermission(
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION)) {
-            fusedLocationClient?.lastLocation?.
+            fusedLocationClient.lastLocation?.
                     addOnSuccessListener(this
                     ) { location : Location? ->
                         // Got last known location. In some rare
@@ -231,7 +231,7 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun showSortDialog() {
-        val sortFragment = SortByFragment.newInstance()
+        val sortFragment = SortByFragment.newInstance(searchFilter)
         sortFragment.show(supportFragmentManager, "sort_fragment")
     }
 
@@ -246,32 +246,32 @@ class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_nearby_house_for_sale -> {
                 searchFilter = SearchFilter(nearbyForSale = true,justSearchType = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_new_to_market -> {
                 searchFilter = SearchFilter(newToMarket = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_price_changes -> {
                 searchFilter = SearchFilter(priceChanged = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_open_houses -> {
                 searchFilter = SearchFilter(openHouse = true, nearbyRecentlySold = true, nearbyForRent = true, nearbyForSale = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_nearby_for_rent -> {
                 searchFilter = SearchFilter(nearbyForRent = true,justSearchType = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_recently_sold -> {
                 searchFilter = SearchFilter(nearbyRecentlySold = true,justSearchType = true)
-                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter)
+                val showNearbyHousesForSale = ShowHousesFragment.newInstance(searchFilter,0)
                 replaceFragment(showNearbyHousesForSale)
             }
             R.id.nav_advanced_search -> {

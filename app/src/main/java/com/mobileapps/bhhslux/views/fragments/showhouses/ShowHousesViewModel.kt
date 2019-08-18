@@ -3,6 +3,7 @@ package com.mobileapps.bhhslux.views.fragments.showhouses
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.Switch
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
@@ -77,9 +78,9 @@ class ShowHousesViewModel : ViewModel
     }
 
 
-    fun getHousesList(filter: SearchFilter,fragmentTransaction2 : FragmentTransaction?) : MutableLiveData<ArrayList<ShowHousesViewModel>>
+    fun getHousesList(filter: SearchFilter,fragmentTransaction2 : FragmentTransaction?,opc : Int) : MutableLiveData<ArrayList<ShowHousesViewModel>>
     {
-        arrayListMutableLiveData.value = db.getFilterHousesByFilter(filter,fragmentTransaction2)
+        arrayListMutableLiveData.value = db.getFilterHousesByFilter(filter,fragmentTransaction2,opc)
         return arrayListMutableLiveData
     }
 

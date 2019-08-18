@@ -14,25 +14,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapps.bhhslux.R
 import com.mobileapps.bhhslux.adapters.ShowHousesAdapter
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.auth.signup.SignUpFragment
-import com.mobileapps.bhhslux.views.fragments.housesdetail.HousesDetailFragment
-import com.mobileapps.bhhslux.views.fragments.sortby.SortByViewModel
 
-class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
+class ShowHousesFragment(private var filter: SearchFilter,private var opc : Int) : Fragment() {
 
 
     private lateinit var recyclerView:RecyclerView
     private lateinit var showHousesAdapter: ShowHousesAdapter
 
-    private val sortByiewModel by lazy {
-        ViewModelProviders.of(activity!!).get(SortByViewModel::class.java)
-    }
-
-
 
 
     companion object {
-        fun newInstance(filter : SearchFilter) = ShowHousesFragment(filter)
+        fun newInstance(filter : SearchFilter,opc : Int) = ShowHousesFragment(filter,opc)
 
     }
 
@@ -66,7 +58,7 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
         fragmentTransaction?.addToBackStack(null)
 
 
-        viewModel.getHousesList(filter,fragmentTransaction).observe(this, Observer
+        viewModel.getHousesList(filter,fragmentTransaction,opc).observe(this, Observer
         {
             showHousesViewModel ->
             showHousesAdapter = ShowHousesAdapter(this@ShowHousesFragment.context,showHousesViewModel!!)
