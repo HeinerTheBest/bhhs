@@ -692,12 +692,134 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <include
+
+    <LinearLayout
         android:id="@+id/bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        layout="@layout/fragment_botton"/>
+        android:background="@color/colorBlack"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/btnContact"
+            android:layout_width="0dp"
+            android:onClick="@{(view) -> viewModel.showContactDialog()}"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:tint="@color/colorWhite"
+                app:srcCompat="@drawable/contact" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Text"
+                android:text="@string/botton_menu_contact" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnSort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:onClick="@{(view) -> viewModel.openNavigation()}"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:tint="@color/colorWhite"
+                app:srcCompat="@drawable/nav" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/Text"
+                android:text="@string/nav" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnRefine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:onClick="@{(view) -> viewModel.openAdvanceSearch()}"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:tint="@color/colorWhite"
+                app:srcCompat="@drawable/refine" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/Text"
+                android:text="@string/botton_menu_refine" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:onClick="@{(view) -> viewModel.shareLinkPlayStore()}"
+            >
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:tint="@color/colorWhite"
+                app:srcCompat="@drawable/botton_share" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/Text"
+                android:text="@string/botton_menu_share" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:tint="@color/colorWhite"
+                app:srcCompat="@drawable/save" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/Text"
+                android:text="@string/botton_menu_save" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

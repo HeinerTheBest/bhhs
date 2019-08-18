@@ -44,7 +44,7 @@ class HousesDetailFragment(private val idHouse: Int) : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         binding.viewModel = viewModel
-
+        viewModel.setActivity(activity,activity?.supportFragmentManager)
 
         // TODO: Use the ViewModel
         viewModel.updateUI(idHouse)

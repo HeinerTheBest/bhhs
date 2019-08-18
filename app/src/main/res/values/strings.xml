@@ -99,6 +99,7 @@
     <string name="clear">Clear</string>
     <string name="search_type">Search Type:</string>
     <string name="address_city_and_state_zip">Address, City and State, Zip</string>
+    <string name="nav">nav</string>
     <array name="listOfSearchType">
         <item>For Sale</item>
         <item>For Rent</item>
