@@ -2,6 +2,7 @@ package com.mobileapps.bhhslux.views.fragments.showhouses
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -63,6 +64,7 @@ class ShowHousesFragment(private var filter: SearchFilter) : Fragment() {
 
         val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
         fragmentTransaction?.addToBackStack(null)
+
 
         viewModel.getHousesList(filter,fragmentTransaction).observe(this, Observer
         {

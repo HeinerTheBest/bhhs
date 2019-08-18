@@ -54,7 +54,7 @@
     <string name="mail_icon">Mail Icon</string>
     <string name="number_phone_to_call">tel:  2084595326</string>
     <string name="sort_by">SORT BY</string>
-    <string name="distance_closes_first">Distance, Closes First</string>
+    <string name="distance_closes_first">Default</string>
     <string name="price_low_to_high">Price, Low to High</string>
     <string name="price_high_to_low">Price, High to Low</string>
     <string name="login_to_berkshire_hathaway_homeservices_home_search_s_app">Login to Berkshire Hathaway HomeServices Home Search\'s app</string>

@@ -5,9 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 import com.mobileapps.bhhslux.R
+import com.mobileapps.bhhslux.databinding.LoginFragmentBinding
+import com.mobileapps.bhhslux.databinding.SortByFragmentBinding
+import com.mobileapps.bhhslux.views.fragments.auth.login.LoginViewModel
+import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel
 
 class SortByFragment : BottomSheetDialogFragment() {
 
@@ -16,16 +21,26 @@ class SortByFragment : BottomSheetDialogFragment() {
     }
 
     private lateinit var viewModel: SortByViewModel
+    private lateinit var binding : SortByFragmentBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(SortByViewModel::class.java)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.sort_by_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.sort_by_fragment, container, false)
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SortByViewModel::class.java)
         // TODO: Use the ViewModel
+        binding.viewModel = viewModel
+
     }
 
 }
