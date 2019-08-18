@@ -10,13 +10,8 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 import com.mobileapps.bhhslux.R
-import com.mobileapps.bhhslux.databinding.LoginFragmentBinding
 import com.mobileapps.bhhslux.databinding.SortByFragmentBinding
 import com.mobileapps.bhhslux.model.searchfilter.SearchFilter
-import com.mobileapps.bhhslux.views.fragments.auth.login.LoginViewModel
-import com.mobileapps.bhhslux.views.fragments.auth.signup.SignUpFragment
-import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesFragment
-import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel
 
 class SortByFragment(private var filter: SearchFilter) : BottomSheetDialogFragment() {
 

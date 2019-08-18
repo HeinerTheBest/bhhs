@@ -100,6 +100,20 @@
     <string name="search_type">Search Type:</string>
     <string name="address_city_and_state_zip">Address, City and State, Zip</string>
     <string name="nav">nav</string>
+    <string name="status_advanced">Status:</string>
+    <string name="active">Active</string>
+    <string name="pending">Pending</string>
+    <string name="min_price">Min Price:</string>
+    <string name="enter_minimum_price">Enter minimum Price</string>
+    <string name="enter_max_price">Enter Max Price</string>
+    <string name="enter_how_many_beds">Enter how many beds</string>
+    <string name="enter_how_many_baths">Enter how many baths</string>
+    <string name="new_listing">New Listing</string>
+    <string name="open_houses">Open Houses</string>
+    <string name="recent_price_changes">Recent Price Changes</string>
+    <string name="for_sale">For Sale</string>
+    <string name="for_rent">For Rent</string>
+    <string name="rec_sold">Rec Sold</string>
     <array name="listOfSearchType">
         <item>For Sale</item>
         <item>For Rent</item>

@@ -17,7 +17,7 @@ class MockDataBase
     fun getAllHouses() : ArrayList<House> {
         val listHouses = arrayListOf<House>()
 
-        listHouses.add(House("5", 399900, 470000    ,"1775 The Exchange SE #200, Atlanta, GA 30339"            , 33.9082112,-84.481082, "3bd 2 ba", "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1","For Sale"     ,false,true  ,false))
+        listHouses.add(House("5", 399900, 470000    ,"1775 The Exchange SE #200, Atlanta, GA 30339"            , 33.9082112,-84.481082, "3bd 2 ba", "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1","For Sale"     ,false,true  ,true))
         listHouses.add(House("1", 1350  , null      ,"1815 The Exchange SE, Atlanta, GA 30339"                 , 33.909243,-84.4803857, "4bd 3 ba", "https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg"                                                             ,"For Sale"     ,true ,true  ,true))
         listHouses.add(House("2", 399900, 450000    ,"1849 The Exchange SE # 200, Atlanta, GA 30339"           , 33.9090115,-84.4801926, "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg","For Sale"     ,false,true  ,false))
         listHouses.add(House("3", 310000, null      ,"1820 The Exchange SE, Atlanta, GA 30339"                 , 33.9075434,-84.4821763, "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true))
@@ -37,7 +37,7 @@ class MockDataBase
         val availableHouses: List<House> = mutableListOf(
                 House("1", 1350  , null      ,"1815 The Exchange SE, Atlanta, GA 30339"                 , 33.909243,-84.4803857, "4bd 3 ba" , "https://i.ytimg.com/vi/Xx6t0gmQ_Tw/maxresdefault.jpg"                                                             ,"For Sale"     ,true ,true  ,true),
                 House("2", 399900, 450000    ,"1849 The Exchange SE # 200, Atlanta, GA 30339"           , 33.9090115,-84.4801926, "3bd 2 ba", "https://assets.themortgagereports.com/wp-content/uploads/2017/12/How-to-Buy-a-House-with-Low-Income-This-Year.jpg","For Sale"     ,false,true  ,false),
-                House("3", 310000, null      ,"1820 The Exchange SE, Atlanta, GA 30339"                 , 33.9075434,-84.4821763, "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,false ,true),
+                House("3", 310000, null      ,"1820 The Exchange SE, Atlanta, GA 30339"                 , 33.9075434,-84.4821763, "4bd 3 ba", "https://cdn.decorpad.com/photos/2017/09/19/8e667843102e.jpg"                                                      ,"For Rent"     ,true ,true ,true),
                 House("4", 295775, null      ,"1770 The Exchange SE Suite 200, Atlanta, GA 30339"       , 33.9075434,-84.4821763, "4bd 3 ba", "https://upload.wikimedia.org/wikipedia/commons/d/d8/SaltBoxHouse1.jpg"                                            ,"Recently Sold",false,false ,false),
                 House("5", 399900, 470000    ,"1775 The Exchange SE #200, Atlanta, GA 30339"            , 33.9082112,-84.481082, "3bd 2 ba" , "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1","For Sale"     ,false,true  ,false),
                 House("6", 310000, null      ,"1755 The Exchange SE #204, Atlanta, GA 30339"            , 33.9093587,-84.4819307, "4bd 3 ba", "https://static.dezeen.com/uploads/2017/08/clifton-house-project-architecture_dezeen_hero-1.jpg"                                                      ,"For Rent"     ,true ,false ,true),
@@ -136,6 +136,9 @@ class MockDataBase
 
     private fun validateHouseWithFilter(house: House, filter: SearchFilter) : Boolean
     {
+        if(filter.advanced)
+            return validateAdvancedSearch(house,filter)
+
         if (filter.all)
             return true
 
@@ -155,6 +158,31 @@ class MockDataBase
         if(!filter.nearbyForRent      && house.searchType == "For Rent")      return false
         if(!filter.nearbyRecentlySold && house.searchType == "Recently Sold") return false
 
+        return true
+    }
+
+    private fun validateAdvancedSearch(house: House, filter: SearchFilter): Boolean {
+
+        if(!filter.nearbyForSale      && house.searchType == "For Sale")      return false
+        if(!filter.nearbyForRent      && house.searchType == "For Rent")      return false
+        if(!filter.nearbyRecentlySold && house.searchType == "Recently Sold") return false
+
+
+
+        if(!filter.status == house.isActive) return false
+
+        if(!filter.openHouse == house.isOpenHouse) return false
+
+        if(!filter.priceChanged == (house.oldPrice!=null)) return false
+
+
+        //if(!filter.newToMarket == house.isNewToMarket) return false
+
+
+
+
+
+        Log.d("Heiner","House id ${house.id} ${house.oldPrice}")
         return true
     }
 

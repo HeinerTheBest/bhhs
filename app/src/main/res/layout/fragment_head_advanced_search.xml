@@ -33,18 +33,6 @@
         android:text="@string/georgia_properties"
         />
 
-    <TextView
-        android:id="@+id/btnSearch"
-        app:layout_constraintStart_toEndOf="@id/tvTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Text"
-        android:text="@string/search"
-        />
-
 
     <View
         android:layout_width="match_parent"
