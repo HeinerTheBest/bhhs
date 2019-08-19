@@ -176,13 +176,17 @@ class MockDataBase
         if(!filter.priceChanged == (house.oldPrice!=null)) return false
 
 
-        //if(!filter.newToMarket == house.isNewToMarket) return false
+        if(!filter.newToMarket == house.isNewToMarket) return false
 
+        filter.minimumPrice?.let { if(it > house.price.toInt()) return false }
 
+        filter.maxPrice?.let { if(it < house.price.toInt()) return false }
 
+        filter.manyBeds?.let { if (it != house.listingDetails.beds) return false}
 
+        filter.manyBaths?.let { if (it != house.listingDetails.fullBath) return false }
 
-        Log.d("Heiner","House id ${house.id} ${house.oldPrice}")
+        
         return true
     }
 
