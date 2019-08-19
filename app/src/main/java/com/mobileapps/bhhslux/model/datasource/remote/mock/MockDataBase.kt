@@ -10,7 +10,7 @@ import com.mobileapps.bhhslux.views.fragments.showhouses.ShowHousesViewModel
 class MockDataBase
 {
 
-    private var database = FirebaseDatabase.getInstance().reference
+   //todo delete private var database = FirebaseDatabase.getInstance().reference
     //private val myRef    = database.getReference("houses")
 
 
@@ -48,7 +48,7 @@ class MockDataBase
                 House("11",436000, null      ,"1651 Massachusetts St SW, Marietta, GA 30008"            , 33.9128652,-84.5723727, "2bd 1 ba", "https://images.adsttc.com/media/images/59a4/c624/b22e/389d/3e00/02a3/newsletter/MHA.JR_201708_038.jpg?1503970808"                                                      ,"For Rent"     ,true ,false ,true)
         )
         availableHouses.forEach {
-            database.child("houses").child(it.id).setValue(it)
+         //todo delete   database.child("houses").child(it.id).setValue(it)
         }
     }
 
@@ -71,7 +71,7 @@ class MockDataBase
                 println("loadPost:onCancelled ${databaseError.toException()}")
             }
         }
-        database.child("houses").addListenerForSingleValueEvent(menuListener)
+        //todo delete database.child("houses").addListenerForSingleValueEvent(menuListener)
 
         for (men in houses) {
             Log.d("Heiner", "THe menu has ${men.price}\n")
@@ -184,7 +184,7 @@ class MockDataBase
         return true
     }
 
-    private fun validateJustSearchType(house: House, filter: SearchFilter) : Boolean
+     fun validateJustSearchType(house: House, filter: SearchFilter) : Boolean
     {
         if(!filter.nearbyForSale      && house.searchType == "For Sale")      return false
         if(!filter.nearbyForRent      && house.searchType == "For Rent")      return false
