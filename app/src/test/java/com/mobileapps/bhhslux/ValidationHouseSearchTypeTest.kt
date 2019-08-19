@@ -7,7 +7,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 
-class ValidationHouseTest
+class ValidationHouseSearchTypeTest
 {
     //Houses
     lateinit var houseForSale        : House
