@@ -54,7 +54,6 @@ class MockDataBase
 
 
 
-
     fun demo(callBack : CallBack)
     {
         val houses: MutableList<House> = mutableListOf()
@@ -90,12 +89,7 @@ class MockDataBase
     fun getHouses(i : Int) : ArrayList<House> {
         val houses = getAllHouses()
         val arrayListToReturn = ArrayList<House>()
-
-        for (index in 0 .. i)
-        {
-            arrayListToReturn.add(houses[index])
-        }
-
+        for (index in 0 .. i) { arrayListToReturn.add(houses[index]) }
         return arrayListToReturn
     }
 
@@ -186,7 +180,7 @@ class MockDataBase
 
         filter.manyBaths?.let { if (it != house.listingDetails.fullBath) return false }
 
-        
+
         return true
     }
 
