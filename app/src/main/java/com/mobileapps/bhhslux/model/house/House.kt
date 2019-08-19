@@ -6,7 +6,7 @@ data class House(
         var id               : String  = "",
         var price            : Long  = 0L,
         var oldPrice         : Long? = 0L,
-        var address          : String  = "", // Change to object address
+        var address          : String  = "",
         var lat              : Double  = 0.0,
         var long             : Double  = 0.0,
         var shortDescription : String  = "",
